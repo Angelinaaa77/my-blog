@@ -1,0 +1,42 @@
+---
+import SocialIcon from './SocialIcon.astro';
+import { AUTHOR, SOCIAL } from '../config';
+
+const year = new Date().getFullYear();
+
+/**
+ * The visible destination, so the accessible name and the hover title say
+ * where the link goes rather than just naming the service.
+ */
+const destination = (href: string) =>
+  href.startsWith('mailto:') ? href.slice('mailto:'.length) : href.replace(/^https?:\/\//, '');
+---
+<footer class="site-footer">
+  <h2 class="footer-heading">Want to stay up to date?</h2>
+
+  <a class="rss-button" href="/rss.xml">Subscribe via RSS Feed</a>
+
+  <ul class="social">
+    {
+      SOCIAL.map((item) => {
+        const name = `${item.label}: ${destination(item.href)}`;
+        const external = !item.href.startsWith('mailto:');
+        return (
+          <li>
+            <a
+              href={item.href}
+              aria-label={name}
+              title={name}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
+            >
+              <SocialIcon name={item.icon} />
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  <p class="copyright">&copy; {year} {AUTHOR}</p>
+</footer>

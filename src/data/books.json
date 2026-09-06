@@ -1,0 +1,47 @@
+{
+  "_comment": "One entry per book. `note` is optional — most books will not have one. `cover` is a filename in public/images/books/. The URLs below are placeholders; swap them for the book's real page on Google Books, Goodreads or the publisher.",
+
+  "library": [
+    {
+      "title": "The Structure of Scientific Revolutions",
+      "author": "Thomas S. Kuhn",
+      "cover": "scientific-revolutions.jpg",
+      "url": "https://openlibrary.org/search?q=The+Structure+of+Scientific+Revolutions"
+    },
+    {
+      "title": "Seeing Like a State",
+      "author": "James C. Scott",
+      "cover": "seeing-like-a-state.jpg",
+      "url": "https://openlibrary.org/search?q=Seeing+Like+a+State",
+      "note": "The book I quote most and lend least — it never comes back."
+    },
+    {
+      "title": "The Master and His Emissary",
+      "author": "Iain McGilchrist",
+      "cover": "master-and-emissary.jpg",
+      "url": "https://openlibrary.org/search?q=The+Master+and+His+Emissary"
+    }
+  ],
+
+  "antilibrary": [
+    {
+      "title": "Being and Time",
+      "author": "Martin Heidegger",
+      "cover": "being-and-time.jpg",
+      "url": "https://openlibrary.org/search?q=Being+and+Time"
+    },
+    {
+      "title": "The Phenomenology of Spirit",
+      "author": "G. W. F. Hegel",
+      "cover": "phenomenology.jpg",
+      "url": "https://openlibrary.org/search?q=Phenomenology+of+Spirit",
+      "note": "Started three times. Have never reached the master-slave dialectic honestly."
+    },
+    {
+      "title": "Gödel, Escher, Bach",
+      "author": "Douglas Hofstadter",
+      "cover": "godel-escher-bach.jpg",
+      "url": "https://openlibrary.org/search?q=Godel+Escher+Bach"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+---
+import { render } from 'astro:content';
+import { formatShortDate, isoDate, type RecentEntry } from '../lib/content';
+
+interface Props {
+  entries: RecentEntry[];
+  /** Where the entry anchors live, so the permalinks work from either page. */
+  base?: string;
+}
+
+const { entries, base = '' } = Astro.props;
+
+// Each entry is its own little Markdown document, so render them up front —
+// the template cannot await inside a map.
+const rendered = await Promise.all(
+  entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content })),
+);
+---
+<ol class="log">
+  {
+    rendered.map(({ entry, Content }) => (
+      <li id={base ? undefined : entry.data.anchor}>
+        <a class="log-date" href={`${base}#${entry.data.anchor}`}>
+          <time datetime={isoDate(entry.data.date)}>
+            {formatShortDate(entry.data.date)}
+          </time>
+        </a>
+        <div class="log-body prose">
+          <Content />
+        </div>
+      </li>
+    ))
+  }
+</ol>

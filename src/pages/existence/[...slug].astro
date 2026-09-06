@@ -1,0 +1,48 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Banner from '../../components/Banner.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import DraftNotice from '../../components/DraftNotice.astro';
+import { sectionPaths, formatDate, isoDate, type Page } from '../../lib/content';
+
+// Renders /existence. See sectionPaths() for why this is a rest route.
+export const getStaticPaths = (async () => sectionPaths('existence')) satisfies GetStaticPaths;
+
+const { page } = Astro.props as { page: Page };
+const { Content } = await render(page);
+const { banner, bannerAlt, questions, title, updated, draft, description } = page.data;
+---
+<BaseLayout title={title} description={description} hasBanner={Boolean(banner)}>
+  {banner && <Banner slot="banner" src={banner} alt={bannerAlt} />}
+
+  {draft && <DraftNotice />}
+
+  <article>
+    {
+      questions ? (
+        /* On the landing page the three questions are the heading; the page
+           title and revision date sit above them as a quiet label. */
+        <header class="page-header is-landing">
+          <p class="page-meta">
+            {title}
+            {draft && <span class="draft-badge">Draft</span>} &middot; Last updated{' '}
+            <time datetime={isoDate(updated)}>{formatDate(updated)}</time>
+          </p>
+          <h1 class="questions">
+            {questions.map((question) => (
+              <span>{question}</span>
+            ))}
+          </h1>
+        </header>
+      ) : (
+        <PageHeader title={title} updated={updated} draft={draft} />
+      )
+    }
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

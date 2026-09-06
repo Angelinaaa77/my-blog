@@ -1,0 +1,34 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+import DraftNotice from '../../../components/DraftNotice.astro';
+import BookShelf from '../../../components/BookShelf.astro';
+import Crosslinks from '../../../components/Crosslinks.astro';
+import { sectionPaths, getShelf, type Page } from '../../../lib/content';
+
+export const getStaticPaths = (async () =>
+  sectionPaths('philosophy/antilibrary')) satisfies GetStaticPaths;
+
+const { page } = Astro.props as { page: Page };
+const { Content } = await render(page);
+const { title, updated, draft, description } = page.data;
+
+const books = await getShelf('antilibrary');
+---
+<BaseLayout title={title} description={description}>
+  {draft && <DraftNotice />}
+
+  <article>
+    <PageHeader title={title} updated={updated} draft={draft} />
+
+    <Crosslinks ids={['philosophy', 'philosophy/library']} />
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+
+  <BookShelf books={books} label="antilibrary" />
+</BaseLayout>

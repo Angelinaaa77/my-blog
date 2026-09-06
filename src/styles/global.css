@@ -1,0 +1,758 @@
+/* ---------------------------------------------------------------------------
+   Tokens. Greyscale only — the writing is the only thing with colour.
+   Light is the base; the dark block redefines the same names so nothing
+   below this section ever needs to know which theme is active.
+--------------------------------------------------------------------------- */
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --fg-muted: #6b6b6b;
+  --fg-faint: #8f8f8f;
+  --rule: #e2e2e2;
+  --rule-strong: #c9c9c9;
+  --mark-bg: #f4f4f4;
+
+  --font-serif: 'Iowan Old Style', 'Charter', 'Bitstream Charter', 'Sitka Text',
+    Cambria, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Measure: ~65-70 characters at the body size below. */
+  --measure: 65ch;
+  --leading: 1.7;
+
+  color-scheme: light;
+}
+
+/* No stored preference and the OS asks for dark. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #111111;
+    --fg: #e6e4e0;
+    --fg-muted: #9a9a9a;
+    --fg-faint: #7a7a7a;
+    --rule: #2b2b2b;
+    --rule-strong: #3d3d3d;
+    --mark-bg: #1c1c1c;
+    color-scheme: dark;
+  }
+}
+
+/* Explicit choice from the toggle wins in both directions. */
+:root[data-theme='dark'] {
+  --bg: #111111;
+  --fg: #e6e4e0;
+  --fg-muted: #9a9a9a;
+  --fg-faint: #7a7a7a;
+  --rule: #2b2b2b;
+  --rule-strong: #3d3d3d;
+  --mark-bg: #1c1c1c;
+  color-scheme: dark;
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: var(--leading);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 34rem) {
+  body {
+    font-size: 1.0625rem;
+  }
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Links
+--------------------------------------------------------------------------- */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: var(--rule-strong);
+  transition: text-decoration-color 120ms ease;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------------------------
+   Header / footer
+--------------------------------------------------------------------------- */
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-block: 3rem 3.5rem;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.site-title a {
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current='page'] {
+  color: var(--fg);
+}
+
+.theme-toggle {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: inherit;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  color: var(--fg);
+}
+
+.site-footer {
+  /* A long, quiet gap so the footer reads as an ending rather than a block
+     bolted to the bottom of the page. */
+  margin-top: 8rem;
+  padding-block: 3rem 4.5rem;
+  border-top: 1px solid var(--rule);
+  text-align: left;
+}
+
+.footer-heading {
+  margin: 0 0 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+/* Outlined, not filled — an offer rather than a call to action. */
+.rss-button {
+  display: inline-block;
+  padding: 0.42em 1.05em;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition:
+    color 120ms ease,
+    border-color 120ms ease;
+}
+
+.rss-button:hover {
+  color: var(--fg);
+  border-color: var(--fg);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  margin: 2.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social a {
+  display: block;
+  color: var(--fg-faint);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+.social a:hover {
+  color: var(--fg-muted);
+}
+
+.social svg {
+  display: block;
+}
+
+.copyright {
+  margin: 2.25rem 0 0;
+  font-size: 0.875rem;
+  color: var(--fg-faint);
+}
+
+
+.site-header.is-compact {
+  padding-bottom: 2rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Banner
+
+   The source is roughly 2.7:1. The frame gets proportionally taller as the
+   viewport narrows and `object-fit: cover` crops evenly from both edges, so
+   narrow screens lose the far left and right and keep the middle.
+--------------------------------------------------------------------------- */
+.banner {
+  margin: 0 0 3.5rem;
+  aspect-ratio: 27 / 10;
+  max-height: min(52vh, 30rem);
+  overflow: hidden;
+  background: var(--mark-bg);
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 48rem) {
+  .banner {
+    aspect-ratio: 2 / 1;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 32rem) {
+  .banner {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Page head
+--------------------------------------------------------------------------- */
+.page-header {
+  margin-bottom: 2.5rem;
+}
+
+.page-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.page-meta {
+  margin: 0;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+}
+
+.page-lede {
+  margin: 0 0 2.5rem;
+  color: var(--fg-muted);
+}
+
+/* The three questions stand in as the heading of the landing page. */
+.questions {
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.012em;
+}
+
+.questions span {
+  display: block;
+}
+
+.questions span + span {
+  margin-top: 0.12em;
+}
+
+@media (max-width: 32rem) {
+  .questions {
+    font-size: 1.5rem;
+  }
+}
+
+.is-landing .page-meta {
+  margin-bottom: 1.25rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Table of contents
+--------------------------------------------------------------------------- */
+.toc {
+  margin: 0 0 3rem;
+  padding-block: 0.9rem;
+  border-block: 1px solid var(--rule);
+}
+
+.toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.75rem;
+  font-size: 0.9375rem;
+}
+
+.toc a {
+  text-decoration: none;
+  color: var(--fg-muted);
+}
+
+.toc a:hover {
+  color: var(--fg);
+}
+
+/* ---------------------------------------------------------------------------
+   Article
+--------------------------------------------------------------------------- */
+/* All vertical rhythm comes from the gap between siblings, so every child
+   starts at zero. Keep this reset and the gap rule at equal specificity —
+   a later `.prose p { margin: 0 }` would outrank the gap and collapse the
+   paragraph spacing entirely. */
+.prose > * {
+  margin: 0;
+}
+
+.prose > * + * {
+  margin-top: 1.4em;
+}
+
+.prose p {
+  hyphens: auto;
+}
+
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin-top: 2.4em;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  scroll-margin-top: 2rem;
+}
+
+/* A heading belongs to the text under it, so it sits closer to that than to
+   the paragraph it follows. */
+.prose :is(h2, h3, h4) + * {
+  margin-top: 0.7em;
+}
+
+.prose h2 {
+  font-size: 1.3125rem;
+}
+
+.prose h3 {
+  font-size: 1.125rem;
+}
+
+.prose h4 {
+  font-size: 1rem;
+  color: var(--fg-muted);
+}
+
+.prose blockquote {
+  margin: 1.8em 0;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--rule-strong);
+  color: var(--fg-muted);
+}
+
+.prose blockquote > * + * {
+  margin-top: 1em;
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.4rem;
+}
+
+.prose li + li {
+  margin-top: 0.5em;
+}
+
+.prose li::marker {
+  color: var(--fg-faint);
+}
+
+.prose hr {
+  margin-block: 2.8em;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--mark-bg);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.prose pre {
+  overflow-x: auto;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.prose table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.prose th,
+.prose td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.5em 0.9em 0.5em 0;
+  text-align: left;
+}
+
+.prose a {
+  text-decoration-color: var(--rule-strong);
+}
+
+/* Shiki: swap the code theme with the page theme. */
+:root[data-theme='dark'] .astro-code,
+:root[data-theme='dark'] .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: transparent !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .astro-code,
+  :root:not([data-theme='light']) .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: transparent !important;
+  }
+}
+
+.prose pre.astro-code {
+  background-color: transparent !important;
+}
+
+/* ---------------------------------------------------------------------------
+   Crosslinks between related pages
+--------------------------------------------------------------------------- */
+.crosslinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.75rem;
+  margin: 0 0 3rem;
+  padding-block: 0.9rem;
+  border-block: 1px solid var(--rule);
+  font-size: 0.9375rem;
+}
+
+.crosslinks a {
+  text-decoration: none;
+  color: var(--fg-muted);
+}
+
+.crosslinks a:hover {
+  color: var(--fg);
+}
+
+/* ---------------------------------------------------------------------------
+   Links to sub-pages, set inside prose
+
+   Deliberately a block rather than an inline link: a destination the reader is
+   meant to notice should not have to be found mid-paragraph.
+--------------------------------------------------------------------------- */
+.page-links {
+  border-top: 1px solid var(--rule);
+}
+
+.page-links a {
+  display: block;
+  padding-block: 0.95rem;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+}
+
+.page-links-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.page-links-title::after {
+  content: ' \2192';
+  color: var(--fg-faint);
+  font-weight: 400;
+}
+
+.page-links a:hover .page-links-title::after {
+  color: var(--fg);
+}
+
+.page-links-desc {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+/* ---------------------------------------------------------------------------
+   Book shelf
+
+   Covers vary in aspect ratio. Each cell reserves a fixed 2:3 box and the
+   image is sized by its own proportions inside it (max-width/max-height with
+   auto sizing, never a forced width and height), so nothing is stretched.
+   Images sit on the bottom edge of their box, which lines the covers up along
+   a common baseline instead of leaving them floating at random heights.
+--------------------------------------------------------------------------- */
+.shelf {
+  list-style: none;
+  margin: 3.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 2.5rem 1.75rem;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+}
+
+.book-cover {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  aspect-ratio: 2 / 3;
+}
+
+.book-cover img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/*
+  The caption is always in the document and in the accessibility tree — only
+  its opacity changes — so it is read out and stays in the link's name even
+  while invisible. Because it keeps its space in the layout, revealing it never
+  reflows the grid, and a book with a note is simply a taller cell.
+*/
+.book-meta {
+  display: block;
+  margin-top: 0.7rem;
+  opacity: 0;
+  transition: opacity 140ms ease;
+}
+
+.book:hover .book-meta,
+.book:focus-visible .book-meta {
+  opacity: 1;
+}
+
+/* Touch devices have no hover, so the captions stay up. */
+@media (hover: none) {
+  .book-meta {
+    opacity: 1;
+  }
+}
+
+.book-title {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+
+.book-author {
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--fg-muted);
+}
+
+.book-note {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--fg-faint);
+}
+
+.shelf-empty {
+  margin: 3.5rem 0 0;
+  color: var(--fg-muted);
+}
+
+/* ---------------------------------------------------------------------------
+   Recently log
+--------------------------------------------------------------------------- */
+.log-section {
+  margin-top: 4.5rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.log-heading {
+  margin: 0 0 2rem;
+  font-size: 1.3125rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  scroll-margin-top: 2rem;
+}
+
+.log {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.log > li {
+  scroll-margin-top: 2rem;
+}
+
+.log > li + li {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+.log-date {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  text-decoration: none;
+}
+
+.log-date:hover {
+  color: var(--fg);
+}
+
+.log > li:target .log-date {
+  color: var(--fg);
+}
+
+/* Entries are a line or two, so they sit tighter than page prose. */
+.log-body > * + * {
+  margin-top: 0.8em;
+}
+
+.log-more {
+  margin: 2.25rem 0 0;
+  font-size: 0.9375rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Drafts
+--------------------------------------------------------------------------- */
+.draft-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.05em 0.45em;
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  vertical-align: 0.15em;
+}
+
+.notice {
+  margin: 0 0 2.5rem;
+  padding: 0.6rem 0 0.6rem 0.9rem;
+  border-left: 1px solid var(--rule-strong);
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+.nav-draft {
+  color: var(--fg-faint);
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  vertical-align: 0.35em;
+}

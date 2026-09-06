@@ -1,0 +1,39 @@
+---
+import type { Book } from '../lib/content';
+
+interface Props {
+  books: Book[];
+  /** Named in the empty state, e.g. "antilibrary". */
+  label: string;
+}
+
+const { books, label } = Astro.props;
+---
+{
+  books.length === 0 ? (
+    <p class="shelf-empty">Nothing on the {label} shelf yet.</p>
+  ) : (
+    <ul class="shelf">
+      {books.map((book) => (
+        <li>
+          {/*
+            The cover is the link. Title and author live inside it as real text
+            rather than a tooltip, so the link has an accessible name, screen
+            readers get it, and touch devices — which have no hover — can show
+            it permanently via the (hover: none) rule.
+          */}
+          <a class="book" href={book.data.url} target="_blank" rel="noopener noreferrer">
+            <span class="book-cover">
+              <img src={`/images/books/${book.data.cover}`} alt="" loading="lazy" />
+            </span>
+            <span class="book-meta">
+              <span class="book-title">{book.data.title}</span>
+              <span class="book-author">{book.data.author}</span>
+              {book.data.note && <span class="book-note">{book.data.note}</span>}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}

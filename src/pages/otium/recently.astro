@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RecentlyList from '../../components/RecentlyList.astro';
+import { getRecent, formatDate, isoDate } from '../../lib/content';
+
+const entries = await getRecent();
+const newest = entries[0]?.data.date;
+---
+<BaseLayout
+  title="Recently"
+  description="A running log — books, music, and things I noticed."
+>
+  <article>
+    <header class="page-header">
+      <h1>Recently</h1>
+      {
+        newest && (
+          <p class="page-meta">
+            {entries.length} entries &middot; last added{' '}
+            <time datetime={isoDate(newest)}>{formatDate(newest)}</time>
+          </p>
+        )
+      }
+    </header>
+
+    <p class="page-lede">
+      Short notes, newest first. The most recent ten also appear on{' '}
+      <a href="/otium">Otium</a>.
+    </p>
+
+    <RecentlyList entries={entries} />
+  </article>
+</BaseLayout>

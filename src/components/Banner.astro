@@ -1,0 +1,23 @@
+---
+interface Props {
+  src: string;
+  alt?: string;
+}
+
+const { src, alt = '' } = Astro.props;
+---
+{/*
+  The source is ~2.7:1. The figure's aspect ratio steps taller as the viewport
+  narrows, and `object-fit: cover` with a centred origin crops from both edges,
+  so the middle of the image is never the part that gets lost.
+*/}
+<figure class="banner">
+  <img
+    src={src}
+    alt={alt}
+    width="2160"
+    height="800"
+    decoding="async"
+    fetchpriority="high"
+  />
+</figure>

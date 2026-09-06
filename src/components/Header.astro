@@ -1,0 +1,36 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import { SITE_TITLE, NAV_ORDER } from '../config';
+import { getNavItems } from '../lib/content';
+
+interface Props {
+  /** Tightens the bottom padding when a banner follows. */
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+
+const items = await getNavItems(NAV_ORDER);
+const home = items[0]?.href ?? '/existence';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
+---
+<header class:list={['site-header', compact && 'is-compact']}>
+  <p class="site-title"><a href={home}>{SITE_TITLE}</a></p>
+  <nav class="site-nav">
+    {
+      items.map((item) => (
+        <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+          {item.label}
+          {item.draft && (
+            <span class="nav-draft" title="Draft — dev only" aria-label="draft">
+              *
+            </span>
+          )}
+        </a>
+      ))
+    }
+    <ThemeToggle />
+  </nav>
+</header>

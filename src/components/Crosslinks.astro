@@ -1,0 +1,38 @@
+---
+import { getPage } from '../lib/content';
+
+interface Props {
+  /** Page collection ids, which are also their paths. */
+  ids: string[];
+}
+
+const { ids } = Astro.props;
+
+// Labels come from the target pages themselves, and a page that is a draft in
+// this build resolves to null — so the row never renders a link to a page that
+// will not exist, the same guard the nav uses.
+const links = (
+  await Promise.all(
+    ids.map(async (id) => {
+      const page = await getPage(id);
+      return page ? { href: `/${id}`, label: page.data.title, draft: page.data.draft } : null;
+    }),
+  )
+).filter((link) => link !== null);
+---
+{
+  links.length > 0 && (
+    <nav class="crosslinks" aria-label="Related pages">
+      {links.map((link) => (
+        <a href={link.href}>
+          {link.label}
+          {link.draft && (
+            <span class="nav-draft" title="Draft — dev only" aria-label="draft">
+              *
+            </span>
+          )}
+        </a>
+      ))}
+    </nav>
+  )
+}

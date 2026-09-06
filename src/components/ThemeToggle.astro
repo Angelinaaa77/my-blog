@@ -1,0 +1,42 @@
+---
+// The button label is filled in by the inline script once the resolved theme
+// is known, so it never renders a value that contradicts the page.
+---
+<button
+  id="theme-toggle"
+  class="theme-toggle"
+  type="button"
+  aria-label="Switch colour theme"
+  title="Switch colour theme"
+>
+  <span aria-hidden="true">&#9789;</span>
+</button>
+
+<script is:inline>
+  (() => {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    const label = toggle.firstElementChild;
+    const paint = (theme) => {
+      if (label) label.textContent = theme === 'dark' ? '☼' : '☽';
+      toggle.setAttribute(
+        'aria-label',
+        theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme',
+      );
+      toggle.setAttribute('title', toggle.getAttribute('aria-label'));
+    };
+
+    paint(document.documentElement.dataset.theme || 'light');
+
+    toggle.addEventListener('click', () => {
+      const next =
+        document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      try {
+        localStorage.setItem('theme', next);
+      } catch {}
+      paint(next);
+    });
+  })();
+</script>

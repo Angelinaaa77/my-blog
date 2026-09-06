@@ -1,0 +1,20 @@
+---
+import { formatDate, isoDate } from '../lib/content';
+
+interface Props {
+  title: string;
+  updated: Date;
+  draft?: boolean;
+}
+
+const { title, updated, draft = false } = Astro.props;
+---
+<header class="page-header">
+  <h1>
+    {title}
+    {draft && <span class="draft-badge">Draft</span>}
+  </h1>
+  <p class="page-meta">
+    Last updated <time datetime={isoDate(updated)}>{formatDate(updated)}</time>
+  </p>
+</header>

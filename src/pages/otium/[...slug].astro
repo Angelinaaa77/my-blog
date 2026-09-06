@@ -1,0 +1,46 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import DraftNotice from '../../components/DraftNotice.astro';
+import RecentlyList from '../../components/RecentlyList.astro';
+import { sectionPaths, getRecent, type Page } from '../../lib/content';
+import { RECENT_ON_OTIUM } from '../../config';
+
+// Renders /otium. The sibling recently.astro is a static route, so it keeps
+// /otium/recently to itself — this rest route only ever emits the base path.
+export const getStaticPaths = (async () => sectionPaths('otium')) satisfies GetStaticPaths;
+
+const { page } = Astro.props as { page: Page };
+const { Content } = await render(page);
+const { title, updated, draft, description } = page.data;
+
+const all = await getRecent();
+const recent = all.slice(0, RECENT_ON_OTIUM);
+const hasMore = all.length > recent.length;
+---
+<BaseLayout title={title} description={description}>
+  {draft && <DraftNotice />}
+
+  <article>
+    <PageHeader title={title} updated={updated} draft={draft} />
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+
+  <section class="log-section" aria-labelledby="recently">
+    <h2 id="recently" class="log-heading">Recently</h2>
+
+    <RecentlyList entries={recent} base="/otium/recently" />
+
+    {
+      hasMore && (
+        <p class="log-more">
+          <a href="/otium/recently">All {all.length} entries &rarr;</a>
+        </p>
+      )
+    }
+  </section>
+</BaseLayout>

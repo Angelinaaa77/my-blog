@@ -1,0 +1,25 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+// Top-level sections only. The slugs come from Astro's own heading ids, so
+// /philosophy#ethics resolves without a second source of truth.
+const { headings } = Astro.props;
+const sections = headings.filter((heading) => heading.depth === 2);
+---
+{
+  sections.length > 1 && (
+    <nav class="toc" aria-label="Sections">
+      <ol>
+        {sections.map((section) => (
+          <li>
+            <a href={`#${section.slug}`}>{section.text}</a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
