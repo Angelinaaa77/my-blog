@@ -1,0 +1,9 @@
+---
+import Iris from './Iris.astro';
+
+// role="separator" keeps the thematic break that an <hr> would have announced;
+// the drawing inside it is aria-hidden, so the motif itself is silent.
+---
+<div class="iris-divider" role="separator">
+  <Iris size={24} />
+</div>

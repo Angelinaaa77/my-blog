@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { satteri } from '@astrojs/markdown-satteri';
+import { irisDividerPlugin } from './src/lib/iris-divider-plugin.mjs';
 
 // Change `site` to your real domain before deploying — RSS and the sitemap
 // both need an absolute URL to generate correct links.
@@ -13,6 +15,8 @@ export default defineConfig({
   },
   integrations: [sitemap()],
   markdown: {
+    // `---` in a page becomes the iris divider rather than a horizontal rule.
+    processor: satteri({ hastPlugins: [irisDividerPlugin] }),
     shikiConfig: {
       themes: { light: 'github-light', dark: 'github-dark' },
     },

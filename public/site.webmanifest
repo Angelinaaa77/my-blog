@@ -1,0 +1,17 @@
+{
+  "name": "Your Name",
+  "short_name": "Your Name",
+  "icons": [
+    {
+      "src": "/icon-192.png?v=820746c4",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png?v=820746c4",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "display": "browser"
+}

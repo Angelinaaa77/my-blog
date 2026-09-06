@@ -50,6 +50,8 @@ rather than published — I would rather maintain a small number of documents
 that get closer to true than accumulate a long list of things I believed once.
 The date at the top of each page tells you when I last touched it.
 
+---
+
 ## Corrections and correspondence
 
 If you find something here wrong, I would genuinely like to know. The pages I

@@ -1,0 +1,24 @@
+---
+import { IRIS, irisMarkup } from '../lib/iris.mjs';
+
+interface Props {
+  /** Rendered height in px. */
+  size?: number;
+  class?: string;
+}
+
+const { size = 24, class: className } = Astro.props;
+
+// Decorative everywhere it appears: the motif carries no information a reader
+// would miss, so it is hidden from assistive tech and skipped by keyboard
+// focus. Colour comes from CSS via currentColor — never from the file.
+---
+<svg
+  class:list={['iris', className]}
+  viewBox={IRIS.viewBox}
+  height={size}
+  fill="currentColor"
+  aria-hidden="true"
+  focusable="false"
+  set:html={irisMarkup()}
+/>

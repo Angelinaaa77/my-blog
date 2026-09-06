@@ -12,6 +12,9 @@
   --rule-strong: #c9c9c9;
   --mark-bg: #f4f4f4;
 
+  /* The iris motif — the one colour on the site. */
+  --iris: #1f2a5e;
+
   --font-serif: 'Iowan Old Style', 'Charter', 'Bitstream Charter', 'Sitka Text',
     Cambria, Georgia, serif;
   --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
@@ -33,6 +36,8 @@
     --rule: #2b2b2b;
     --rule-strong: #3d3d3d;
     --mark-bg: #1c1c1c;
+    /* Lifted to a tint: the navy would disappear into near-black. */
+    --iris: #96a4dc;
     color-scheme: dark;
   }
 }
@@ -46,6 +51,7 @@
   --rule: #2b2b2b;
   --rule-strong: #3d3d3d;
   --mark-bg: #1c1c1c;
+  --iris: #96a4dc;
   color-scheme: dark;
 }
 
@@ -525,6 +531,29 @@ a:hover {
 }
 
 /* ---------------------------------------------------------------------------
+   Iris motif
+
+   A recurring signature, not a feature: one colour, small, and given enough
+   space that it reads as a pause in the text rather than an ornament on it.
+--------------------------------------------------------------------------- */
+.iris {
+  color: var(--iris);
+}
+
+.iris-divider {
+  display: flex;
+  justify-content: center;
+  /* Generous, and deliberately more than the 1.4em between paragraphs, so the
+     divider separates blocks rather than sitting inside one. */
+  margin-block: 4rem;
+}
+
+.footer-iris {
+  vertical-align: -0.28em;
+  margin-right: 0.5rem;
+}
+
+/* ---------------------------------------------------------------------------
    Links to sub-pages, set inside prose
 
    Deliberately a block rather than an inline link: a destination the reader is
@@ -662,9 +691,9 @@ a:hover {
    Recently log
 --------------------------------------------------------------------------- */
 .log-section {
-  margin-top: 4.5rem;
-  padding-top: 2.25rem;
-  border-top: 1px solid var(--rule);
+  /* The iris divider above supplies the separation; a rule as well would be
+     saying the same thing twice. */
+  margin-top: 0;
 }
 
 .log-heading {

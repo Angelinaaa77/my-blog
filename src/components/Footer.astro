@@ -1,5 +1,6 @@
 ---
 import SocialIcon from './SocialIcon.astro';
+import Iris from './Iris.astro';
 import { AUTHOR, SOCIAL } from '../config';
 
 const year = new Date().getFullYear();
@@ -38,5 +39,7 @@ const destination = (href: string) =>
     }
   </ul>
 
-  <p class="copyright">&copy; {year} {AUTHOR}</p>
+  <p class="copyright">
+    <Iris size={18} class="footer-iris" />&copy; {year} {AUTHOR}
+  </p>
 </footer>

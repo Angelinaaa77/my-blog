@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import { IRIS_VERSION } from '../lib/iris.mjs';
 import '../styles/global.css';
 
 interface Props {
@@ -24,6 +25,18 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
+
+    <!-- The iris. SVG where supported, .ico (16/32/48) everywhere else, a
+         padded PNG for iOS home screens, and the manifest for Android. All
+         generated from public/images/fleur-de-lis.svg by `npm run icons`. -->
+    <link rel="icon" href={`/favicon.ico?v=${IRIS_VERSION}`} sizes="16x16 32x32 48x48" />
+    <link rel="icon" href={`/favicon.svg?v=${IRIS_VERSION}`} type="image/svg+xml" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href={`/apple-touch-icon.png?v=${IRIS_VERSION}`}
+    />
+    <link rel="manifest" href={`/site.webmanifest?v=${IRIS_VERSION}`} />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />

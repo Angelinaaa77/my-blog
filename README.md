@@ -10,6 +10,7 @@ Every page shows when it was last updated; there is no chronological feed.
 | `npm run dev`     | Dev server at `localhost:4321` (drafts visible)   |
 | `npm run build`   | Production build to `./dist` (drafts excluded)    |
 | `npm run preview` | Serve the production build locally                |
+| `npm run icons`   | Rebuild the favicon files from the iris drawing    |
 
 ## Structure
 
@@ -136,6 +137,54 @@ hears "GitHub, github.com/you" rather than "link", and hovering shows the same.
 
 The icons are 24x24 single-path marks that inherit `currentColor`, so dark mode
 and the hover state need no separate rules.
+
+## The iris
+
+The motif is a fleur-de-lis — the heraldic stylisation of the iris. The drawing
+lives in exactly one place: **`public/images/fleur-de-lis.svg`**. `src/lib/iris.mjs`
+reads that file at build time and hands the geometry to everything that uses it,
+so replacing the SVG changes the whole site.
+
+Used in three places:
+
+- **Section dividers.** `---` in any Markdown page renders as a centred iris
+  instead of a horizontal rule, with 4rem of space above and below. Also used
+  between the prose and the log on `/otium`.
+- **Footer.** A small mark beside the copyright line.
+- **Favicon.** Generated from the same file.
+
+`Iris.astro` renders it at any size; `IrisDivider.astro` wraps it for use
+between blocks of text. The Markdown plugin in `src/lib/iris-divider-plugin.mjs`
+reads the same module.
+
+Colour is never set in the file — the path is `fill="currentColor"`, and the
+`--iris` token supplies it: `#1f2a5e` in light, lifted to `#96a4dc` in dark
+where the navy would disappear into the background. Every iris is `aria-hidden`;
+it is decoration and carries nothing a reader would miss. The divider keeps
+`role="separator"` so the thematic break an `<hr>` would have announced is still
+there.
+
+Only the geometry is inlined into pages. The source file keeps its own metadata
+(including its C2PA manifest), which is larger than the drawing itself and has
+no business in every HTML response.
+
+### Rebuilding the icons
+
+**After replacing the SVG, run `npm run icons`.** It regenerates:
+
+| File | For |
+| --- | --- |
+| `favicon.svg` | modern browsers; carries its own dark-mode rule |
+| `favicon.ico` | 16/32/48, transparent, for everything else |
+| `apple-touch-icon.png` | 180, padded on white for iOS home screens |
+| `icon-192.png`, `icon-512.png` | Android / installed PWAs |
+| `site.webmanifest` | references the two PNG sizes |
+
+The script starts and stops headless Chrome itself; set `CHROME_PATH` if Chrome
+is somewhere unusual. It also clears `node_modules/.astro` — Astro caches
+rendered Markdown keyed by the source file rather than by the plugin that
+transformed it, so without that step a changed drawing leaves the old divider
+in the build even after a full rebuild.
 
 ## Typography
 
