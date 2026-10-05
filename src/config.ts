@@ -3,14 +3,14 @@
  * nav contains, and where the footer links point.
  */
 
-export const SITE_TITLE = 'Your Name';
+export const SITE_TITLE = 'Angelina Huang';
 export const SITE_DESCRIPTION =
   'A personal site: where I come from, what I think, and what I have been paying attention to.';
 
 /** Shown in the footer copyright line. */
-export const AUTHOR = 'Your Name';
+export const AUTHOR = 'Angelina Huang';
 
-export const EMAIL = 'you@example.com';
+export const EMAIL = 'angelinahuang1112@gmail.com';
 
 /**
  * Nav order. Each id must match a file in src/content/pages/; a page that is a
@@ -28,8 +28,7 @@ export const RECENT_ON_OTIUM = 10;
  * `icon` must be one of the keys in src/components/SocialIcon.astro.
  */
 export const SOCIAL = [
-  { icon: 'github', label: 'GitHub', href: 'https://github.com/you' },
-  { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/you' },
-  { icon: 'twitter', label: 'Twitter', href: 'https://twitter.com/you' },
+  { icon: 'github', label: 'GitHub', href: 'https://github.com/PeacoFoxy' },
+  { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/angelina-huang1112/' },
   { icon: 'email', label: 'Email', href: `mailto:${EMAIL}` },
 ] as const;

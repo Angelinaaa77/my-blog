@@ -18,7 +18,7 @@ what I think. The longer answer is below, and it changes.
 ## Who am I?
 
 Mostly a set of habits with a name attached. I notice that I am drawn to
-problems where the difficulty is definitional rather than technical — where
+problems where the difficulty is definitional rather than technical, where
 the hard part is working out what would even count as an answer. That
 disposition has shaped my work, my reading, and the kind of arguments I enjoy.
 
@@ -31,7 +31,7 @@ explain something quickly is not the same as understanding it.
 
 Somewhere specific, which I will fill in. But the honest version of this
 question is not geographic. It is about the inherited assumptions you only
-notice when someone raises an eyebrow — the ones that felt like the structure
+notice when someone raises an eyebrow: the ones that felt like the structure
 of reality until you met a reasonable person who had never considered them.
 
 I came from a place and a set of people who took ideas seriously without
@@ -40,13 +40,13 @@ of that ever since.
 
 ## Where am I going?
 
-I do not have a five-year plan and I have stopped pretending to want one. What
-I have instead is a direction: toward work that compounds, toward fewer and
+I do not have a plan for the next five years, and I have stopped pretending
+to want one. What I have instead is a direction: toward work that compounds, toward fewer and
 deeper commitments, toward the kind of understanding that survives being
 argued with.
 
 Concretely, that means writing more of this down. Pages here are revised
-rather than published — I would rather maintain a small number of documents
+rather than published. I would rather maintain a small number of documents
 that get closer to true than accumulate a long list of things I believed once.
 The date at the top of each page tells you when I last touched it.
 
@@ -63,5 +63,5 @@ compliment.
 ## Colophon
 
 Built with [Astro](https://astro.build). Set in whatever serif your system
-offers first — Iowan Old Style, Charter, or Georgia. No trackers, no analytics,
+offers first: Iowan Old Style, Charter, or Georgia. No trackers, no analytics,
 no cookies, and no JavaScript beyond the theme toggle.

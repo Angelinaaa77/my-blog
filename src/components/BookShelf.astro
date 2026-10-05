@@ -8,6 +8,10 @@ interface Props {
 }
 
 const { books, label } = Astro.props;
+
+/** Local filenames resolve under /images/books/; absolute URLs are used as-is. */
+const coverSrc = (cover: string) =>
+  cover.startsWith('http') ? cover : `/images/books/${cover}`;
 ---
 {
   books.length === 0 ? (
@@ -24,7 +28,7 @@ const { books, label } = Astro.props;
           */}
           <a class="book" href={book.data.url} target="_blank" rel="noopener noreferrer">
             <span class="book-cover">
-              <img src={`/images/books/${book.data.cover}`} alt="" loading="lazy" />
+              <img src={coverSrc(book.data.cover)} alt="" loading="lazy" />
             </span>
             <span class="book-meta">
               <span class="book-title">{book.data.title}</span>

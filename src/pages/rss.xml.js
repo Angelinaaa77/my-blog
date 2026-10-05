@@ -21,7 +21,7 @@ export async function GET(context) {
   }));
 
   const logItems = recent.map((entry) => ({
-    title: `Recently — ${entry.data.date.toISOString().slice(0, 10)}`,
+    title: `Recently, ${entry.data.date.toISOString().slice(0, 10)}`,
     description: (entry.body ?? '').replace(/\s+/g, ' ').trim(),
     pubDate: entry.data.date,
     link: `/otium/recently/#${entry.data.anchor}`,

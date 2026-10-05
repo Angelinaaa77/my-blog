@@ -16,6 +16,13 @@ const { Content } = await render(page);
 const { title, updated, draft, description } = page.data;
 
 const books = await getShelf('library');
+
+/** Category order follows first appearance in books.json, so the file sets the page order. */
+const categories: string[] = [];
+for (const book of books) {
+  const category = book.data.category ?? 'Uncategorized';
+  if (!categories.includes(category)) categories.push(category);
+}
 ---
 <BaseLayout title={title} description={description}>
   {draft && <DraftNotice />}
@@ -30,5 +37,15 @@ const books = await getShelf('library');
     </div>
   </article>
 
-  <BookShelf books={books} label="library" />
+  {categories.map((category) => {
+    const shelf = books.filter(
+      (book) => (book.data.category ?? 'Uncategorized') === category,
+    );
+    return (
+      <section class="shelf-section">
+        <h2 class="shelf-heading">{category}</h2>
+        <BookShelf books={shelf} label={category.toLowerCase()} />
+      </section>
+    );
+  })}
 </BaseLayout>

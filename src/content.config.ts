@@ -34,14 +34,20 @@ const recently = defineCollection({
 /**
  * Both shelves come from the single file src/data/books.json, so adding a book
  * is one entry in one place. The id is the cover filename without its
- * extension — unique by construction, since two books cannot share a file.
+ * extension, or a slug of the title when the cover is an absolute URL.
+ * Unique by construction, since two books cannot share a file or a title.
  */
 const shelf = (key: 'library' | 'antilibrary') =>
   file('src/data/books.json', {
     parser: (text) =>
       (JSON.parse(text)[key] ?? []).map((book: Record<string, unknown>, index: number) => ({
         ...book,
-        id: String(book.cover).replace(/\.[^.]+$/, ''),
+        id: String(book.cover).startsWith('http')
+          ? String(book.title)
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-+|-+$/g, '')
+          : String(book.cover).replace(/\.[^.]+$/, ''),
         order: index,
       })),
   });
@@ -49,11 +55,13 @@ const shelf = (key: 'library' | 'antilibrary') =>
 const bookSchema = z.object({
   title: z.string(),
   author: z.string(),
-  /** Filename inside public/images/books/ */
+  /** Filename inside public/images/books/, or a full image URL used as-is. */
   cover: z.string(),
   url: z.string().url(),
   /** Optional one-liner. Most books will not have one. */
   note: z.string().optional(),
+  /** Shelf section on the library page, e.g. 'Investment'. */
+  category: z.string().optional(),
   /** Position in books.json, so the page order matches the file order. */
   order: z.number(),
 });

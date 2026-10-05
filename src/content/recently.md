@@ -1,7 +1,7 @@
 # Recently
 
 Short notes, newest first. To add one, put a `## YYYY-MM-DD` heading and a line
-or two under it — anywhere in this file. Ordering comes from the dates, so the
+or two under it, anywhere in this file. Ordering comes from the dates, so the
 top is just the convenient place.
 
 ## 2026-09-04
@@ -23,7 +23,7 @@ true, and hearing it stated in advance did not spoil it.
 
 ## 2026-08-22
 
-Learned that the standard line width in typography — around 66 characters —
+Learned that the standard line width in typography, around 66 characters,
 shows up independently in manuscript traditions that had no contact with each
 other. Either a fact about the eye or a very good coincidence.
 
@@ -53,12 +53,12 @@ something I have not checked. Trying to catch it.
 ## 2026-07-24
 
 Byrd's *Mass for Four Voices*, sung in a small church with terrible acoustics,
-which turned out to be the right acoustics — the lines stayed separate instead
+which turned out to be the right acoustics. The lines stayed separate instead
 of blending into a wash.
 
 ## 2026-07-19
 
-A colleague described a piece of work as "load-bearing", and I have been using
+A colleague described a piece of work as "load bearing", and I have been using
 it for everything since. The right metaphor is a tool.
 
 ## 2026-07-12

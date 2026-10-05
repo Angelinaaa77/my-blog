@@ -1,25 +1,90 @@
 {
-  "_comment": "One entry per book. `note` is optional — most books will not have one. `cover` is a filename in public/images/books/. The URLs below are placeholders; swap them for the book's real page on Google Books, Goodreads or the publisher.",
+  "_comment": "Library books in shelf order: Investment, then Philosophy, then Literature. `category` sets the shelf section on the library page. `cover` is either a filename in public/images/books/ or a full image URL, which is used as-is. `url` is the book's Google Books page.",
 
   "library": [
     {
-      "title": "The Structure of Scientific Revolutions",
-      "author": "Thomas S. Kuhn",
-      "cover": "scientific-revolutions.jpg",
-      "url": "https://openlibrary.org/search?q=The+Structure+of+Scientific+Revolutions"
+      "title": "The Black Swan",
+      "author": "Nassim Nicholas Taleb",
+      "cover": "https://books.google.com/books/publisher/content?id=GSBcQVd3MqYC&printsec=frontcover&img=1&zoom=2&edge=curl",
+      "url": "https://www.google.com/books/edition/The_Black_Swan_Second_Edition/GSBcQVd3MqYC?hl=en&gbpv=0",
+      "category": "Investment"
     },
     {
-      "title": "Seeing Like a State",
-      "author": "James C. Scott",
-      "cover": "seeing-like-a-state.jpg",
-      "url": "https://openlibrary.org/search?q=Seeing+Like+a+State",
-      "note": "The book I quote most and lend least — it never comes back."
+      "title": "One Up on Wall Street",
+      "author": "Peter Lynch, John Rothchild",
+      "cover": "one-up-on-wall-street.svg",
+      "url": "https://www.google.com/books/edition/One_Up_On_Wall_Street/KcJaXu7FVZ0C?hl=en&gbpv=0",
+      "category": "Investment"
     },
     {
-      "title": "The Master and His Emissary",
-      "author": "Iain McGilchrist",
-      "cover": "master-and-emissary.jpg",
-      "url": "https://openlibrary.org/search?q=The+Master+and+His+Emissary"
+      "title": "The Intelligent Investor",
+      "author": "Benjamin Graham",
+      "cover": "intelligent-investor.svg",
+      "url": "https://www.google.com/books/edition/The_Intelligent_Investor_Rev_Ed/-NdcCSt8t_YC?hl=en&gbpv=0",
+      "category": "Investment"
+    },
+    {
+      "title": "The Great Game",
+      "author": "John Steele Gordon",
+      "cover": "great-game.svg",
+      "url": "https://www.google.com/books/edition/The_Great_Game/cTdBPgAACAAJ?hl=en",
+      "category": "Investment"
+    },
+    {
+      "title": "How Countries Go Broke",
+      "author": "Ray Dalio",
+      "cover": "how-countries-go-broke.svg",
+      "url": "https://www.google.com/books/edition/How_Countries_Go_Broke/NMs-EQAAQBAJ?hl=en&gbpv=0",
+      "category": "Investment"
+    },
+    {
+      "title": "Tractatus Logico-Philosophicus",
+      "author": "Ludwig Wittgenstein",
+      "cover": "https://books.google.com/books/publisher/content?id=9RW0AAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl",
+      "url": "https://www.google.com/books/edition/Tractatus_Logico_Philosophicus/9RW0AAAAQBAJ?hl=en&gbpv=0",
+      "category": "Philosophy"
+    },
+    {
+      "title": "How to Die",
+      "author": "Seneca",
+      "cover": "https://books.google.com/books/publisher/content?id=Mww8DwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl",
+      "url": "https://www.google.com/books/edition/How_to_Die/Mww8DwAAQBAJ?hl=en&gbpv=0",
+      "category": "Philosophy"
+    },
+    {
+      "title": "How to Tell a Joke",
+      "author": "Cicero",
+      "cover": "how-to-tell-a-joke.svg",
+      "url": "https://www.google.com/books/edition/How_to_Tell_a_Joke/lu0EEAAAQBAJ?hl=en&gbpv=0",
+      "category": "Philosophy"
+    },
+    {
+      "title": "How to Be a Bad Emperor",
+      "author": "Suetonius",
+      "cover": "how-to-be-a-bad-emperor.svg",
+      "url": "https://www.google.com/books/edition/How_to_Be_a_Bad_Emperor/K8StDwAAQBAJ?hl=en&gbpv=0",
+      "category": "Philosophy"
+    },
+    {
+      "title": "The Vegetarian",
+      "author": "Han Kang",
+      "cover": "https://books.google.com/books/publisher/content?id=qtDvCAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl",
+      "url": "https://www.google.com/books/edition/The_Vegetarian/qtDvCAAAQBAJ?hl=en&gbpv=0",
+      "category": "Literature"
+    },
+    {
+      "title": "Kafka on the Shore",
+      "author": "Haruki Murakami",
+      "cover": "kafka-on-the-shore.svg",
+      "url": "https://www.google.com/books/edition/Kafka_on_the_Shore/ypQHO-JWFKgC?hl=en&gbpv=0",
+      "category": "Literature"
+    },
+    {
+      "title": "The Stranger",
+      "author": "Albert Camus",
+      "cover": "https://books.google.com/books/publisher/content?id=7qylv1KYf0kC&printsec=frontcover&img=1&zoom=2&edge=curl",
+      "url": "https://www.google.com/books/edition/The_Stranger/7qylv1KYf0kC?hl=en&gbpv=0",
+      "category": "Literature"
     }
   ],
 
@@ -35,7 +100,7 @@
       "author": "G. W. F. Hegel",
       "cover": "phenomenology.jpg",
       "url": "https://openlibrary.org/search?q=Phenomenology+of+Spirit",
-      "note": "Started three times. Have never reached the master-slave dialectic honestly."
+      "note": "Started three times. Have never honestly reached the dialectic of master and slave."
     },
     {
       "title": "Gödel, Escher, Bach",

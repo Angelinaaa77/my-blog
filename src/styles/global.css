@@ -659,6 +659,29 @@ a:hover {
 }
 
 /* ---------------------------------------------------------------------------
+   Shelf sections (library categories)
+
+   One BookShelf per category. The section heading carries the category name;
+   the shelf keeps its own grid but sits closer under a heading than it does
+   when it opens a page.
+--------------------------------------------------------------------------- */
+.shelf-section {
+  margin-top: 3.5rem;
+}
+
+.shelf-section .shelf {
+  margin-top: 2rem;
+}
+
+.shelf-heading {
+  margin: 0;
+  font-size: 1.3125rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  scroll-margin-top: 2rem;
+}
+
+/* ---------------------------------------------------------------------------
    Recently log
 --------------------------------------------------------------------------- */
 .log-section {
@@ -755,4 +778,112 @@ a:hover {
   font-family: var(--font-mono);
   font-size: 0.75em;
   vertical-align: 0.35em;
+}
+
+/* ---------------------------------------------------------------------------
+   Senses gallery (Aesthetics)
+
+   Four quiet tiles — Sight, Sound, Scent, Savor — mostly image, a line or two
+   at most. Greyscale and hairlines like everything else; the content itself
+   provides any colour.
+--------------------------------------------------------------------------- */
+.senses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.75rem 2rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 40rem) {
+  .senses {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sense {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.1rem;
+}
+
+.sense h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.sense .sense-note {
+  margin-top: 0.2rem;
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+
+.sense .sense-empty {
+  margin-top: 1.25rem;
+  padding: 2.25rem 1rem;
+  border: 1px dashed var(--rule-strong);
+  border-radius: 2px;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: var(--fg-faint);
+}
+
+/* Sub-branches and track links inside a sense tile. */
+.sense .sense-sub {
+  margin: 1.4rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+}
+
+.sense .sense-links {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+}
+
+.sense .sense-links li + li {
+  margin-top: 0.65rem;
+}
+
+.sense-links a {
+  display: block;
+  text-decoration: none;
+}
+
+.sense-link-title {
+  font-size: 1rem;
+}
+
+.sense-links a .sense-link-title::after {
+  content: ' \2192';
+  color: var(--fg-faint);
+  font-weight: 400;
+}
+
+.sense-links a:hover .sense-link-title::after {
+  color: var(--fg);
+}
+
+.sense-link-note {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
+.sense-link-meta {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
+.sense-link-desc {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--fg-faint);
 }
