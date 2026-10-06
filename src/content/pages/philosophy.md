@@ -4,29 +4,44 @@ description: 'Working positions on metaphysics, epistemology, ethics and aesthet
 updated: 2026-09-03
 ---
 
-What follows are working positions, not conclusions. I have tried to state each
-one strongly enough to be wrong, since a view hedged into safety cannot teach
-you anything when it fails. Where I have changed my mind, I have said so.
+Platonism mistakes the model for the world.
 
 ## Metaphysics
 
-I am a reluctant naturalist. Reluctant because the position has a well known
-hole in it, namely consciousness, and I do not think the hole is being papered
-over honestly by anyone, including the people I agree with. But every alternative I
-have examined solves that problem by introducing two more.
+The Big Five is the only test I think is the most accurate.
 
-The commitment I actually hold is thinner than "naturalism" suggests: whatever
-exists is the kind of thing that can stand in causal relations, and
-explanations bottom out in structure rather than in purpose. That leaves open
-almost everything interesting. It rules out the moves I find least honest.
+My Big Five results, from a Mensorium test in October 2026. The label it gave me: Organizer, high conscientiousness.
 
-On identity, I have come round to thinking the persistence question is badly
-posed. "Am I the same person I was at twenty?" has no determinate answer
-because "same person" is doing several jobs at once: legal, moral,
-psychological, narrative, and they come apart in exactly the cases where we
-want to ask.
+<div class="traits">
+  <div class="trait">
+    <div class="trait-head"><span class="trait-name">Openness</span><span class="trait-score">87</span></div>
+    <div class="trait-bar"><div class="trait-fill" style="width: 87%"></div></div>
+  </div>
+  <div class="trait">
+    <div class="trait-head"><span class="trait-name">Conscientiousness</span><span class="trait-score">88</span></div>
+    <div class="trait-bar"><div class="trait-fill" style="width: 88%"></div></div>
+  </div>
+  <div class="trait">
+    <div class="trait-head"><span class="trait-name">Extraversion</span><span class="trait-score">57</span></div>
+    <div class="trait-bar"><div class="trait-fill" style="width: 57%"></div></div>
+  </div>
+  <div class="trait">
+    <div class="trait-head"><span class="trait-name">Agreeableness</span><span class="trait-score">65</span></div>
+    <div class="trait-bar"><div class="trait-fill" style="width: 65%"></div></div>
+  </div>
+  <div class="trait">
+    <div class="trait-head"><span class="trait-name">Neuroticism</span><span class="trait-score">51</span></div>
+    <div class="trait-bar"><div class="trait-fill" style="width: 51%"></div></div>
+  </div>
+</div>
+
+High openness and high conscientiousness is the whole story: appetite for the new, discipline to finish. Each virtue has its overshoot: openness into dilettantism, conscientiousness into perfectionism.
+
+Why not MBTI? I have never quite believed in MBTI. It's hard to say mine because I'm pretty flexible between E and I, S and N, P and J. The only valid one that has never changed is T, which stands for logic and reasonable. But as a previously psychology fan in high school, I used it as a way to start a topic in social occasions.
 
 ## Epistemology
+
+A skeptical empiricist.
 
 Beliefs should be held at the strength the evidence supports, which is easy to
 say and nearly impossible to do, because the strength of your evidence is
@@ -46,6 +61,12 @@ Where I have changed my mind: I used to think that being calibrated was mostly
 about the numbers. I now think it is mostly about noticing which questions you
 are motivated to get a particular answer to, and treating those differently.
 
+Taleb calls it the ludic fallacy, from the Latin for game: the mistake of treating life as simple as the model. It is not. The Gaussian is the cleanest version of the error, a bell curve with no room for the events that matter most. The way through is not a better model but a wider gaze, toward the dataset outside everyone's sight.
+
+My strategy for living follows from this: seek gains by collecting positive accidents, maximizing exposure to good black swans.
+
+Taleb's companion concept is epistemic arrogance: the difference between what you actually know and how much you think you know. An excess implies arrogance. A deficit, humility. I aim to be an epistemocrat, holding my own knowledge in greater suspicion.
+
 If knowledge is mostly testimony, then which testimony you have and have not
 encountered is not a footnote to your epistemology. It is most of it. So this
 section has two pages under it rather than beside it:
@@ -57,7 +78,7 @@ section has two pages under it rather than beside it:
   </a>
   <a href="/philosophy/antilibrary">
     <span class="page-links-title">Antilibrary</span>
-    <span class="page-links-desc">Books I have not read, kept as a map of what I do not know.</span>
+    <span class="page-links-desc">Books I have not read, kept as a map of what I do not know, to eliminate epistemic arrogance.</span>
   </a>
 </div>
 

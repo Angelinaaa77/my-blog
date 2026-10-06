@@ -60,6 +60,8 @@ My email is at the bottom of every page. I answer it, usually slowly, and I am
 far more likely to reply to a specific disagreement than to a general
 compliment.
 
+I much prefer in-person deep talk to online chatting. My phone is only for maps, finding the correct routing in the city.
+
 ## Colophon
 
 Built with [Astro](https://astro.build). Set in whatever serif your system

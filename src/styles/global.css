@@ -887,3 +887,49 @@ a:hover {
   font-style: italic;
   color: var(--fg-faint);
 }
+
+/* ---------------------------------------------------------------------------
+   Big Five trait bars (Mind)
+
+   Greyscale and hairlines like everything else. The fill uses --fg so it
+   follows the theme automatically; the score stays in text for screen readers.
+--------------------------------------------------------------------------- */
+.traits {
+  margin-top: 2rem;
+}
+
+.trait + .trait {
+  margin-top: 1.3rem;
+}
+
+.trait-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.trait-name {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.trait-score {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
+.trait-bar {
+  margin-top: 0.4rem;
+  height: 0.5rem;
+  background: var(--mark-bg);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+
+.trait-fill {
+  height: 100%;
+  background: var(--fg);
+  border-radius: 1px;
+}

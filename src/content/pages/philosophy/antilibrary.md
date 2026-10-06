@@ -1,6 +1,6 @@
 ---
 title: 'Antilibrary'
-description: 'Books I have not read, kept as a map of what I do not know.'
+description: 'Books I have not read, kept as a map of what I do not know, to eliminate epistemic arrogance.'
 updated: 2026-09-06
 ---
 
