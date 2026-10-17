@@ -43,33 +43,9 @@ Why not MBTI? I have never quite believed in MBTI. It's hard to say mine because
 
 A skeptical empiricist.
 
-Beliefs should be held at the strength the evidence supports, which is easy to
-say and nearly impossible to do, because the strength of your evidence is
-itself something you estimate with the same faulty apparatus.
-
-The practical corrective I trust most is not a method but a habit: state in
-advance what would change your mind, and then notice whether it ever happens.
-A belief for which you cannot name a defeater is not a strong belief. It is a
-belief that has stopped being connected to the world.
-
-I take testimony seriously as a source of knowledge. Most of what I know, I
-know because someone told me, and the fantasy of the self sufficient reasoner
-who derives everything from first principles is both false and a good way to
-be confidently wrong about a great many things.
-
-Where I have changed my mind: I used to think that being calibrated was mostly
-about the numbers. I now think it is mostly about noticing which questions you
-are motivated to get a particular answer to, and treating those differently.
-
-Taleb calls it the ludic fallacy, from the Latin for game: the mistake of treating life as simple as the model. It is not. The Gaussian is the cleanest version of the error, a bell curve with no room for the events that matter most. The way through is not a better model but a wider gaze, toward the dataset outside everyone's sight.
+I'm an enigmaphile.
 
 My strategy for living follows from this: seek gains by collecting positive accidents, maximizing exposure to good black swans.
-
-Taleb's companion concept is epistemic arrogance: the difference between what you actually know and how much you think you know. An excess implies arrogance. A deficit, humility. I aim to be an epistemocrat, holding my own knowledge in greater suspicion.
-
-If knowledge is mostly testimony, then which testimony you have and have not
-encountered is not a footnote to your epistemology. It is most of it. So this
-section has two pages under it rather than beside it:
 
 <div class="page-links">
   <a href="/philosophy/library">
@@ -84,46 +60,186 @@ section has two pages under it rather than beside it:
 
 ## Ethics
 
-I find consequentialism true in the abstract and unusable in the particular.
-The reasons are not the standard objections about repugnant conclusions; they
-are epistemic. Consequences require prediction, prediction is bad at exactly
-the scales moral decisions operate on, and a theory whose application depends
-on a faculty you do not have cannot guide action.
-
-So I run on rules and dispositions, while believing the rules are justified by
-their consequences in aggregate. This is unsatisfying to purists on both
-sides and I have made my peace with it.
-
-The thing I am most confident about is negative: suffering is bad, and its
-badness does not depend on whose it is or how far away they are. Almost every
-serious moral failure I can identify in history involves someone deciding that
-a certain category of suffering did not count.
-
-The thing I am least confident about is how much of ethics survives being
-scaled up. Obligations that are clear between two people become strange when
-multiplied by eight billion, and I do not think anyone has a good account of
-where the strangeness comes from.
+Quackery, magician, and priest. You cannot tell.
 
 ## Aesthetics
 
 <div class="senses">
-  <section class="sense">
+  <section class="sense sense-sight">
     <h3>Sight</h3>
-    <p class="sense-note">Paintings and sketches, made in Procreate.</p>
-    <p class="sense-empty">Coming soon.</p>
+    <p class="sense-note">Some random sketches in boring lectures.</p>
+    <div class="filmstrip">
+      <div class="film-track">
+        <div class="film-set">
+    <figure class="painting">
+      <a href="/images/art/sketch-01.webp"><img src="/images/art/sketch-01.webp" alt="Winged figure in flowing robes, standing" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-02.webp"><img src="/images/art/sketch-02.webp" alt="Bust of a woman on a plinth" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-03.webp"><img src="/images/art/sketch-03.webp" alt="Crowned figure holding a sword upright" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-04.webp"><img src="/images/art/sketch-04.webp" alt="Winged figure seen from behind, wings raised" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-05.webp"><img src="/images/art/sketch-05.webp" alt="Figure drawing a longbow" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-06.webp"><img src="/images/art/sketch-06.webp" alt="Winged figure with her wings curved around her" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-07.webp"><img src="/images/art/sketch-07.webp" alt="Figure playing a long flute, seen from behind" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-08.webp"><img src="/images/art/sketch-08.webp" alt="Seated winged figure wearing a crown of roses" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-09.webp"><img src="/images/art/sketch-09.webp" alt="Mourning winged statue, head bowed into her hand" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-10.webp"><img src="/images/art/sketch-10.webp" alt="Winged figure with hands crossed over her chest" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-11.webp"><img src="/images/art/sketch-11.webp" alt="Winged figure resting her chin on a sword held upright" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-12.webp"><img src="/images/art/sketch-12.webp" alt="Winged figure in profile with long wavy hair" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-13.webp"><img src="/images/art/sketch-13.webp" alt="Winged figure dancing in billowing drapery" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-14.webp"><img src="/images/art/sketch-14.webp" alt="Winged figure looking upward, hair streaming" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-15.webp"><img src="/images/art/sketch-15.webp" alt="Winged figure with arms folded, head bowed" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-16.webp"><img src="/images/art/sketch-16.webp" alt="Kneeling winged figure with one great wing raised" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-17.webp"><img src="/images/art/sketch-17.webp" alt="Bust of a woman with flowing hair" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-18.webp"><img src="/images/art/sketch-18.webp" alt="Medusa with snakes for hair and red lips" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-19.webp"><img src="/images/art/sketch-19.webp" alt="Kneeling winged figure with hands clasped in prayer" loading="lazy" /></a>
+    </figure>
+        </div>
+        <div class="film-set" aria-hidden="true">
+    <figure class="painting">
+      <a href="/images/art/sketch-01.webp" tabindex="-1"><img src="/images/art/sketch-01.webp" alt="Winged figure in flowing robes, standing" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-02.webp" tabindex="-1"><img src="/images/art/sketch-02.webp" alt="Bust of a woman on a plinth" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-03.webp" tabindex="-1"><img src="/images/art/sketch-03.webp" alt="Crowned figure holding a sword upright" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-04.webp" tabindex="-1"><img src="/images/art/sketch-04.webp" alt="Winged figure seen from behind, wings raised" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-05.webp" tabindex="-1"><img src="/images/art/sketch-05.webp" alt="Figure drawing a longbow" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-06.webp" tabindex="-1"><img src="/images/art/sketch-06.webp" alt="Winged figure with her wings curved around her" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-07.webp" tabindex="-1"><img src="/images/art/sketch-07.webp" alt="Figure playing a long flute, seen from behind" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-08.webp" tabindex="-1"><img src="/images/art/sketch-08.webp" alt="Seated winged figure wearing a crown of roses" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-09.webp" tabindex="-1"><img src="/images/art/sketch-09.webp" alt="Mourning winged statue, head bowed into her hand" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-10.webp" tabindex="-1"><img src="/images/art/sketch-10.webp" alt="Winged figure with hands crossed over her chest" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-11.webp" tabindex="-1"><img src="/images/art/sketch-11.webp" alt="Winged figure resting her chin on a sword held upright" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-12.webp" tabindex="-1"><img src="/images/art/sketch-12.webp" alt="Winged figure in profile with long wavy hair" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-13.webp" tabindex="-1"><img src="/images/art/sketch-13.webp" alt="Winged figure dancing in billowing drapery" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-14.webp" tabindex="-1"><img src="/images/art/sketch-14.webp" alt="Winged figure looking upward, hair streaming" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-15.webp" tabindex="-1"><img src="/images/art/sketch-15.webp" alt="Winged figure with arms folded, head bowed" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-16.webp" tabindex="-1"><img src="/images/art/sketch-16.webp" alt="Kneeling winged figure with one great wing raised" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-17.webp" tabindex="-1"><img src="/images/art/sketch-17.webp" alt="Bust of a woman with flowing hair" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-18.webp" tabindex="-1"><img src="/images/art/sketch-18.webp" alt="Medusa with snakes for hair and red lips" loading="lazy" /></a>
+    </figure>
+    <figure class="painting">
+      <a href="/images/art/sketch-19.webp" tabindex="-1"><img src="/images/art/sketch-19.webp" alt="Kneeling winged figure with hands clasped in prayer" loading="lazy" /></a>
+    </figure>
+        </div>
+      </div>
+    </div>
+    <div class="lightbox" id="lightbox" hidden>
+      <img class="lightbox-img" src="" alt="" />
+    </div>
+    <script>
+      (function () {
+        var box = document.getElementById('lightbox');
+        if (!box) return;
+        var img = box.querySelector('.lightbox-img');
+        function open(a) {
+          var pic = a.querySelector('img');
+          img.src = a.getAttribute('href');
+          img.alt = pic ? pic.getAttribute('alt') : '';
+          box.hidden = false;
+          document.body.style.overflow = 'hidden';
+          if (box.requestFullscreen) box.requestFullscreen().catch(function () {});
+        }
+        function close() {
+          box.hidden = true;
+          img.src = '';
+          document.body.style.overflow = '';
+          if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
+        }
+        document.querySelectorAll('.painting a').forEach(function (a) {
+          a.addEventListener('click', function (e) {
+            e.preventDefault();
+            open(a);
+          });
+        });
+        box.addEventListener('click', close);
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && !box.hidden && !document.fullscreenElement) close();
+        });
+        document.addEventListener('fullscreenchange', function () {
+          if (!document.fullscreenElement && !box.hidden) close();
+        });
+      })();
+    </script>
   </section>
   <section class="sense">
     <h3>Sound</h3>
     <h4 class="sense-sub">Piano</h4>
     <ul class="sense-links">
       <li>
-        <a href="https://open.spotify.com/track/79oDe8deNyUCE6uLUNgZ3F" target="_blank" rel="noopener noreferrer"><span class="sense-link-title">Romance de Amor</span></a>
+        <a href="https://open.spotify.com/track/79oDe8deNyUCE6uLUNgZ3F" target="_blank" rel="noopener noreferrer"><span class="sense-link-title">Romance de Amor</span><span class="sense-link-desc">An anonymous Spanish romance built on one singing melody. Quiet, unhurried, and impossible to forget once heard.</span></a>
       </li>
-    </ul>
-    <h4 class="sense-sub">Orchestra</h4>
-    <ul class="sense-links">
       <li>
-        <a href="https://open.spotify.com/track/3VlFW8Omkxldd1qlwtW1Fz" target="_blank" rel="noopener noreferrer"><span class="sense-link-title">Give a Little Time to Your Love</span><span class="sense-link-meta">Richard Clayderman, 1978</span></a>
+        <a href="https://open.spotify.com/track/3FsQd7kl4pZ7yhRiKXLFaR" target="_blank" rel="noopener noreferrer"><span class="sense-link-title">The Phantom of the Opera</span><span class="sense-link-meta">Francesco Parrino, 2022</span><span class="sense-link-desc">Bright, dramatic, and all big melody, the music I love most. On solo piano it loses none of its grandeur.</span></a>
+      </li>
+      <li>
+        <a href="https://open.spotify.com/track/137TGad6xQ3rYuy97grrdM" target="_blank" rel="noopener noreferrer"><span class="sense-link-title">Toccata</span><span class="sense-link-meta">Karine Poghosyan, 2015</span><span class="sense-link-desc">The third piece I have chosen for the ABRSM Grade 8 piano examination. All drive and bright edges; it never sits still.</span></a>
       </li>
     </ul>
   </section>
@@ -168,6 +284,30 @@ where the strangeness comes from.
       </li>
       <li>
         <span class="sense-link-title">Apple martini</span> <span class="sense-link-note">(shaken, not stirred)</span>
+      </li>
+    </ul>
+  </section>
+  <section class="sense">
+    <h3>Touch</h3>
+    <h4 class="sense-sub">Books</h4>
+    <ul class="sense-links">
+      <li>
+        <span class="sense-link-title">Book pages</span>
+        <span class="sense-link-desc">New paper smooth, old paper brittle and dry. Half of reading is holding the thing itself.</span>
+      </li>
+    </ul>
+    <h4 class="sense-sub">Piano</h4>
+    <ul class="sense-links">
+      <li>
+        <span class="sense-link-title">Piano keys</span>
+        <span class="sense-link-desc">Weighted and cool to the touch. An hour in, my fingers stop thinking and simply play.</span>
+      </li>
+    </ul>
+    <h4 class="sense-sub">Poker</h4>
+    <ul class="sense-links">
+      <li>
+        <span class="sense-link-title">Chips</span>
+        <span class="sense-link-desc">Clay chips, riffled without looking. They keep my hands busy while my mind counts.</span>
       </li>
     </ul>
   </section>

@@ -47,6 +47,3 @@ print(me.piano())
 print(me.bartending())
 ```
 
-## Future goal
-
-Have a little dog.

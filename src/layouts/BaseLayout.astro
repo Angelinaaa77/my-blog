@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 import '../styles/global.css';
@@ -7,7 +7,7 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
-  /** Set on /existence so the banner can span the viewport. */
+  /** Accepted for compatibility; the banner now sits in the content column. */
   hasBanner?: boolean;
 }
 
@@ -44,18 +44,17 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
     </script>
   </head>
   <body>
-    <div class="wrap">
-      <Header compact={hasBanner} />
-    </div>
+    <Sidebar />
 
-    <!-- Outside .wrap so it can run the full width without a 100vw hack. -->
-    <slot name="banner" />
+    <div class:list={['content', hasBanner && 'has-banner']}>
+      <slot name="banner" />
 
-    <div class="wrap">
-      <main>
-        <slot />
-      </main>
-      <Footer />
+      <div class="wrap">
+        <main>
+          <slot />
+        </main>
+        <Footer />
+      </div>
     </div>
   </body>
 </html>

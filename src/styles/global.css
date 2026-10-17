@@ -109,43 +109,134 @@ a:hover {
 }
 
 /* ---------------------------------------------------------------------------
-   Header / footer
+   Sidebar / footer
+
+   The categories live at the left edge of the screen: fixed and always
+   present on wide screens, parked off the left edge on narrow ones until
+   the toggle opens them (data-nav="open" on <html>).
 --------------------------------------------------------------------------- */
-.site-header {
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
+  width: min(85vw, 20rem);
+  padding: 3rem 1.75rem 2rem;
+  border-right: 1px solid var(--rule);
+  background: var(--bg);
+  overflow-y: auto;
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  padding-block: 3rem 3.5rem;
+  flex-direction: column;
+  gap: 2rem;
+  transform: translateX(-105%);
+  transition: transform 240ms ease;
 }
 
-.site-title {
+html[data-nav='open'] .sidebar {
+  transform: none;
+  box-shadow: 0 0 3rem rgb(0 0 0 / 0.18);
+}
+
+.side-photo {
+  height: 10rem;
+  border: 1px solid var(--rule);
+}
+
+.side-title {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
-.site-title a {
+.side-title a {
   text-decoration: none;
 }
 
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  font-size: 0.9375rem;
+.side-nav {
+  font-size: 1.125rem;
+}
+
+.side-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side-nav > ul > li + li {
+  margin-top: 0.9rem;
+}
+
+.side-nav a {
+  display: block;
+  padding-block: 0.3rem;
+  text-decoration: none;
   color: var(--fg-muted);
 }
 
-.site-nav a {
-  text-decoration: none;
+.side-nav a:hover {
+  color: var(--fg);
 }
 
-.site-nav a:hover,
-.site-nav a[aria-current='page'] {
+.side-nav a[aria-current='page'] {
   color: var(--fg);
+  font-weight: 600;
+}
+
+.side-foot {
+  margin-top: auto;
+  color: var(--fg-muted);
+}
+
+.nav-toggle {
+  position: fixed;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 50;
+  appearance: none;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  line-height: 1;
+  padding: 0.55rem 0.8rem;
+  cursor: pointer;
+}
+
+.scrim {
+  display: none;
+}
+
+html[data-nav='open'] .scrim {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgb(0 0 0 / 0.25);
+}
+
+.content {
+  padding-top: 3rem;
+}
+
+.content.has-banner {
+  padding-top: 0;
+}
+
+@media (min-width: 64rem) {
+  .sidebar {
+    width: 19rem;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .content {
+    margin-left: 19rem;
+  }
 }
 
 .theme-toggle {
@@ -172,6 +263,22 @@ a:hover {
   padding-block: 3rem 4.5rem;
   border-top: 1px solid var(--rule);
   text-align: left;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .site-footer {
+    grid-template-columns: 1fr minmax(0, 36ch);
+    gap: 3rem;
+  }
+}
+
+.footer-note {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--fg-muted);
 }
 
 .footer-heading {
@@ -231,10 +338,6 @@ a:hover {
   color: var(--fg-faint);
 }
 
-
-.site-header.is-compact {
-  padding-bottom: 2rem;
-}
 
 /* ---------------------------------------------------------------------------
    Banner
@@ -325,34 +428,6 @@ a:hover {
 
 .is-landing .page-meta {
   margin-bottom: 1.25rem;
-}
-
-/* ---------------------------------------------------------------------------
-   Table of contents
---------------------------------------------------------------------------- */
-.toc {
-  margin: 0 0 3rem;
-  padding-block: 0.9rem;
-  border-block: 1px solid var(--rule);
-}
-
-.toc ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.75rem;
-  font-size: 0.9375rem;
-}
-
-.toc a {
-  text-decoration: none;
-  color: var(--fg-muted);
-}
-
-.toc a:hover {
-  color: var(--fg);
 }
 
 /* ---------------------------------------------------------------------------
@@ -802,7 +877,87 @@ a:hover {
 
 .sense {
   border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
   padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+
+.sense-sight {
+  grid-column: 1 / -1;
+}
+
+.filmstrip {
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.film-track {
+  display: flex;
+  width: max-content;
+  animation: filmroll 95s linear infinite;
+}
+
+.filmstrip:hover .film-track,
+.filmstrip:focus-within .film-track {
+  animation-play-state: paused;
+}
+
+.film-set {
+  display: flex;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@keyframes filmroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filmstrip {
+    overflow-x: auto;
+  }
+
+  .film-track {
+    animation: none;
+  }
+}
+
+.painting {
+  margin: 0;
+}
+
+.painting {
+  flex: 0 0 auto;
+}
+
+.painting img {
+  display: block;
+  height: 11rem;
+  width: auto;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.93);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox img {
+  max-width: 94vw;
+  max-height: 94vh;
+  width: auto;
+  height: auto;
 }
 
 .sense h3 {
@@ -865,6 +1020,10 @@ a:hover {
 
 .sense-links a:hover .sense-link-title::after {
   color: var(--fg);
+}
+
+.sense-links li:has(.sense-link-note) {
+  white-space: nowrap;
 }
 
 .sense-link-note {
@@ -932,4 +1091,40 @@ a:hover {
   height: 100%;
   background: var(--fg);
   border-radius: 1px;
+}
+
+/* ---------------------------------------------------------------------------
+   Wide screens
+
+   On a phone the site is one column, as it should be. On a computer the
+   page opens out to the width of the screen: text keeps its readable
+   measure in the middle, and the exhibits (book shelves, the senses, the
+   page cards, code) get the full width.
+--------------------------------------------------------------------------- */
+@media (min-width: 64rem) {
+  .wrap {
+    max-width: min(94vw, 78rem);
+  }
+
+  .prose > :where(p, h2, h3, h4, ul, ol, blockquote, .footnotes, .traits) {
+    max-width: 96ch;
+    margin-inline: 0;
+    width: 100%;
+  }
+
+  .exhibit {
+    text-align: left;
+  }
+
+  .exhibit img {
+    margin-inline: 0;
+  }
+
+  .exhibit figcaption {
+    text-align: left;
+  }
+
+  .senses {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

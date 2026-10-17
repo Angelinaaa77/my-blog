@@ -1,0 +1,91 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import { SITE_TITLE, NAV_ORDER } from '../config';
+import { getNavItems } from '../lib/content';
+
+/*
+  The site's categories live here, at the left edge of the screen: just the
+  three major pages. Sections stay on their own pages; the sidebar is the
+  map of the whole site, not of one page. On wide screens it is always
+  present; on narrow ones it slides in over the page from a toggle button
+  and closes again once a destination is chosen.
+
+  The empty frame at the top is where a photo will go. The name sits below
+  it, toward the left.
+*/
+
+const items = await getNavItems(NAV_ORDER);
+const home = items[0]?.href ?? '/existence';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
+---
+
+<button
+  class="nav-toggle"
+  type="button"
+  aria-label="Open menu"
+  aria-expanded="false"
+  aria-controls="sidebar"
+>
+  <span aria-hidden="true">&#9776;</span>
+</button>
+<div class="scrim" aria-hidden="true"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="side-photo" aria-hidden="true"></div>
+
+  <p class="side-title"><a href={home}>{SITE_TITLE}</a></p>
+
+  <nav class="side-nav" aria-label="Site">
+    <ul>
+      {
+        items.map((item) => (
+          <li>
+            <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+              {item.label}
+              {item.draft && (
+                <span class="nav-draft" title="Draft — dev only" aria-label="draft">
+                  *
+                </span>
+              )}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <div class="side-foot">
+    <ThemeToggle />
+  </div>
+</aside>
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const toggle = document.querySelector('.nav-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const scrim = document.querySelector('.scrim');
+    if (!toggle || !sidebar) return;
+
+    const setOpen = (open) => {
+      if (open) {
+        root.dataset.nav = 'open';
+      } else {
+        delete root.dataset.nav;
+      }
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+
+    toggle.addEventListener('click', () => setOpen(root.dataset.nav !== 'open'));
+    scrim?.addEventListener('click', () => setOpen(false));
+    sidebar.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+    addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    });
+  })();
+</script>

@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RecentlyList from '../../components/RecentlyList.astro';
-import { getRecent, formatDate, isoDate } from '../../lib/content';
+import { getRecent } from '../../lib/content';
 
 const entries = await getRecent();
-const newest = entries[0]?.data.date;
 ---
 <BaseLayout
   title="Recently"
@@ -13,14 +12,7 @@ const newest = entries[0]?.data.date;
   <article>
     <header class="page-header">
       <h1>Recently</h1>
-      {
-        newest && (
-          <p class="page-meta">
-            {entries.length} entries &middot; last added{' '}
-            <time datetime={isoDate(newest)}>{formatDate(newest)}</time>
-          </p>
-        )
-      }
+      <p class="page-meta">{entries.length} entries</p>
     </header>
 
     <p class="page-lede">

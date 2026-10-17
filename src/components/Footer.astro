@@ -12,6 +12,7 @@ const destination = (href: string) =>
   href.startsWith('mailto:') ? href.slice('mailto:'.length) : href.replace(/^https?:\/\//, '');
 ---
 <footer class="site-footer">
+  <div class="footer-main">
   <h2 class="footer-heading">Want to stay up to date?</h2>
 
   <a class="rss-button" href="/rss.xml">Subscribe via RSS Feed</a>
@@ -39,4 +40,12 @@ const destination = (href: string) =>
   </ul>
 
   <p class="copyright">&copy; {year} {AUTHOR}</p>
+  </div>
+
+  <p class="footer-note">
+    P.S. I much prefer in-person deep talk or a reserved call to online messaging.
+    My phone is always on Do Not Disturb, because I think scrolling on the phone
+    is both distracting and time consuming. I do not check it very often.
+    Apologies for the late replies.
+  </p>
 </footer>

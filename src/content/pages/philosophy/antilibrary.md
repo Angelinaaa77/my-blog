@@ -13,3 +13,5 @@ I keep this page for the same reason. Everything here is something I have
 decided is worth not having read yet: a known gap rather than an absence I
 have never noticed. The list gets longer faster than the [library](/philosophy/library)
 does, which is the honest ratio.
+
+Reading reduces hubris and bias, the psychological epistemic limits.

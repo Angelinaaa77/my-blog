@@ -40,30 +40,16 @@ of that ever since.
 
 ## Where am I going?
 
-I do not have a plan for the next five years, and I have stopped pretending
-to want one. What I have instead is a direction: toward work that compounds, toward fewer and
-deeper commitments, toward the kind of understanding that survives being
-argued with.
+What matters most in my life. Game. Romance. The future.
 
-Concretely, that means writing more of this down. Pages here are revised
-rather than published. I would rather maintain a small number of documents
-that get closer to true than accumulate a long list of things I believed once.
-The date at the top of each page tells you when I last touched it.
+Characteristics that I continuously remind myself to carry on
 
-## Corrections and correspondence
+- Preternatural confidence with humility
+- Unusual determination with diversification of risk
 
-If you find something here wrong, I would genuinely like to know. The pages I
-am most confident about are the ones most likely to contain an error, and I
-have no way of noticing that from the inside.
+Ideal lifestyle: coffee, game, and money at all hours; playing poker into the night.
 
-My email is at the bottom of every page. I answer it, usually slowly, and I am
-far more likely to reply to a specific disagreement than to a general
-compliment.
+I always need new challenges and bigger canvas.
 
-I much prefer in-person deep talk to online chatting. My phone is only for maps, finding the correct routing in the city.
-
-## Colophon
-
-Built with [Astro](https://astro.build). Set in whatever serif your system
-offers first: Iowan Old Style, Charter, or Georgia. No trackers, no analytics,
-no cookies, and no JavaScript beyond the theme toggle.
+> "The hell with it. I am just going to run it myself,"
+> Simons told a friend.
