@@ -25,15 +25,23 @@ const { banner, bannerAlt, questions, title, updated, draft, description } = pag
         /* On the landing page the three questions are the heading; the page
            title and revision date sit above them as a quiet label. */
         <header class="page-header is-landing">
-          <p class="page-meta">
-            {title}
+          <p class="page-meta landing-kicker">
+            <span>FIELD NOTES / 001</span>
+            <span class="landing-status"><i aria-hidden="true"></i> A WORK IN PROGRESS</span>
             {draft && <span class="draft-badge">Draft</span>}
           </p>
-          <h1 class="questions">
+          <h1 class="landing-title">
+            Minds, machines,<br />and markets.
+          </h1>
+          <p class="landing-deck">
+            A personal notebook at the intersection of mathematics, machine learning,
+            philosophy, and the questions that make each field human.
+          </p>
+          <p class="questions">
             {questions.map((question) => (
               <span>{question}</span>
             ))}
-          </h1>
+          </p>
         </header>
       ) : (
         <PageHeader title={title} updated={updated} draft={draft} />
