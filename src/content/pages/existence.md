@@ -49,6 +49,8 @@ Characteristics that I continuously remind myself to carry on
 
 Ideal lifestyle: coffee, game, and money at all hours; playing poker into the night.
 
+My principle of making money is simple. The only way to accumulate wealth is through value creation. I want mine built on my own niche ability: assets that earn while I sleep, which is Naval Ravikant's definition of wealth.
+
 I always need new challenges and bigger canvas.
 
 > "The hell with it. I am just going to run it myself,"
