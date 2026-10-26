@@ -1,5 +1,6 @@
 ---
 import { getPage } from '../lib/content';
+import { withBase } from '../lib/site-path';
 
 interface Props {
   /** Page collection ids, which are also their paths. */
@@ -15,7 +16,7 @@ const links = (
   await Promise.all(
     ids.map(async (id) => {
       const page = await getPage(id);
-      return page ? { href: `/${id}`, label: page.data.title, draft: page.data.draft } : null;
+      return page ? { href: withBase(`/${id}/`), label: page.data.title, draft: page.data.draft } : null;
     }),
   )
 ).filter((link) => link !== null);

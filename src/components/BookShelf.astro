@@ -1,5 +1,6 @@
 ---
 import type { Book } from '../lib/content';
+import { withBase } from '../lib/site-path';
 
 interface Props {
   books: Book[];
@@ -11,7 +12,7 @@ const { books, label } = Astro.props;
 
 /** Local filenames resolve under /images/books/; absolute URLs are used as-is. */
 const coverSrc = (cover: string) =>
-  cover.startsWith('http') ? cover : `/images/books/${cover}`;
+  cover.startsWith('http') ? cover : withBase(`/images/books/${cover}`);
 ---
 {
   books.length === 0 ? (

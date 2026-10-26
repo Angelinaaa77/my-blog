@@ -1,5 +1,6 @@
 import rss from '@astrojs/rss';
 import { getPublishedPages, getRecent } from '../lib/content';
+import { withBase } from '../lib/site-path';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 /**
@@ -17,14 +18,14 @@ export async function GET(context) {
     description: page.data.description,
     pubDate: page.data.updated,
     // A page's collection id is its path: 'philosophy/library' -> /philosophy/library/
-    link: `/${page.id}/`,
+    link: withBase(`/${page.id}/`),
   }));
 
   const logItems = recent.map((entry) => ({
     title: `Recently, ${entry.data.date.toISOString().slice(0, 10)}`,
     description: (entry.body ?? '').replace(/\s+/g, ' ').trim(),
     pubDate: entry.data.date,
-    link: `/otium/recently/#${entry.data.anchor}`,
+    link: `${withBase('/otium/recently/')}#${entry.data.anchor}`,
   }));
 
   const items = [...pageItems, ...logItems].sort(
@@ -34,7 +35,7 @@ export async function GET(context) {
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    site: context.site,
+    site: new URL(withBase('/'), context.site),
     items,
   });
 }

@@ -2,6 +2,7 @@
 import Sidebar from '../components/Sidebar.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import { withBase } from '../lib/site-path';
 import '../styles/global.css';
 
 interface Props {
@@ -13,7 +14,7 @@ interface Props {
 
 const { title, description = SITE_DESCRIPTION, hasBanner = false } = Astro.props;
 const pageTitle = title ? `${title} · ${SITE_TITLE}` : SITE_TITLE;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
+const canonical = new URL(withBase(Astro.url.pathname), Astro.site ?? Astro.url);
 ---
 <!doctype html>
 <html lang="en">
@@ -23,7 +24,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={withBase('/rss.xml')} />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
@@ -44,6 +45,36 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
     </script>
   </head>
   <body>
+    <div class="ambient-field" aria-hidden="true">
+      <svg class="ambient-iris" viewBox="0 0 600 600" focusable="false">
+        <circle class="iris-ring iris-ring-outer" cx="300" cy="300" r="274" />
+        <circle class="iris-ring" cx="300" cy="300" r="238" />
+        <circle class="iris-ring iris-ring-dash" cx="300" cy="300" r="204" />
+        <path class="iris-eye" d="M35 300Q300 78 565 300Q300 522 35 300Z" />
+        <path class="iris-ray" d="M300 65v82m0 306v82M65 300h82m306 0h82M134 134l58 58m216 216 58 58m0-332-58 58M192 408l-58 58" />
+        <g class="epistemic-diagram">
+          <path class="epistemic-link" d="M136 428h91m46 0h80m47 0h58" />
+          <path class="epistemic-arrow" d="m220 423 8 5-8 5m122-10 8 5-8 5" />
+          <path class="epistemic-feedback" d="M477 464Q298 548 98 464" />
+          <path class="epistemic-feedback-arrow" d="m106 459-9 5 9 5Z" />
+          <path class="epistemic-eye" d="M63 428q35-34 70 0-35 34-70 0Z" />
+          <circle class="epistemic-pupil" cx="98" cy="428" r="8" />
+          <path class="epistemic-plane" d="m273 407 25-14 25 14v29l-25 14-25-14v-29Zm0 0 25 15 25-15m-25 15v28" />
+          <circle class="epistemic-point" cx="298" cy="422" r="3" />
+          <path class="epistemic-object" d="m453 416 24-14 24 14-24 14-24-14Zm0 0v28l24 14v-28m24-14v28l-24 14" />
+          <text x="98" y="487">SUBJECT</text>
+          <text x="298" y="487">REPRESENTATION</text>
+          <text x="477" y="487">WORLD</text>
+        </g>
+        <circle class="iris-ring" cx="300" cy="300" r="136" />
+        <g class="iris-pupil" data-iris-pupil>
+          <circle cx="300" cy="300" r="82" />
+          <circle cx="300" cy="300" r="54" />
+          <circle cx="300" cy="300" r="12" />
+          <path d="M300 206v188m-94-94h188" />
+        </g>
+      </svg>
+    </div>
     <Sidebar />
 
     <div class:list={['content', hasBanner && 'has-banner']}>
@@ -56,5 +87,43 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
         <Footer />
       </div>
     </div>
+
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+
+        document.querySelectorAll('[data-two-truths]').forEach((quiz) => {
+          const choices = Array.from(quiz.querySelectorAll('[data-truth-lie-guess]'));
+          const feedback = quiz.querySelector('.truth-lie-feedback');
+          choices.forEach((choice) => {
+            choice.addEventListener('click', () => {
+              choices.forEach((item) => {
+                item.setAttribute('aria-pressed', String(item === choice));
+              });
+              if (feedback) {
+                const correct = choice.dataset.truthLieGuess === quiz.dataset.lieAnswer;
+                feedback.dataset.result = correct ? 'correct' : 'incorrect';
+                feedback.textContent = correct
+                  ? 'Correct! My original plan was to become a clinical psychologist.'
+                  : 'Not quite — try again!';
+              }
+            });
+          });
+        });
+
+        if (!matchMedia('(pointer: fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        let frame = 0;
+        addEventListener('pointermove', (event) => {
+          if (frame) return;
+          frame = requestAnimationFrame(() => {
+            const x = ((event.clientX / innerWidth) - 0.5) * 11;
+            const y = ((event.clientY / innerHeight) - 0.5) * 11;
+            root.style.setProperty('--iris-gaze-x', `${x.toFixed(1)}px`);
+            root.style.setProperty('--iris-gaze-y', `${y.toFixed(1)}px`);
+            frame = 0;
+          });
+        }, { passive: true });
+      })();
+    </script>
   </body>
 </html>

@@ -2,6 +2,7 @@
 import ThemeToggle from './ThemeToggle.astro';
 import { SITE_TITLE, NAV_ORDER } from '../config';
 import { getNavItems } from '../lib/content';
+import { withBase } from '../lib/site-path';
 
 /*
   The site's categories live here, at the left edge of the screen: just the
@@ -10,12 +11,11 @@ import { getNavItems } from '../lib/content';
   present; on narrow ones it slides in over the page from a toggle button
   and closes again once a destination is chosen.
 
-  The empty frame at the top is where a photo will go. The name sits below
-  it, toward the left.
+  A monochrome portrait sits above the notebook identity and site navigation.
 */
 
 const items = await getNavItems(NAV_ORDER);
-const home = items[0]?.href ?? '/existence';
+const home = items[0]?.href ?? withBase('/existence/');
 
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isCurrent = (href: string) => path === href || path.startsWith(href + '/');
@@ -34,20 +34,14 @@ const isCurrent = (href: string) => path === href || path.startsWith(href + '/')
 
 <aside class="sidebar" id="sidebar">
   <a class="side-mark" href={home} aria-label={`${SITE_TITLE} home`}>
-    <svg viewBox="0 0 160 100" role="img" aria-label="A set of intersecting orbital paths">
-      <ellipse cx="80" cy="50" rx="66" ry="23" />
-      <ellipse cx="80" cy="50" rx="45" ry="16" />
-      <ellipse cx="80" cy="50" rx="23" ry="9" />
-      <path d="M80 20v60M45 50h70" />
-      <circle cx="80" cy="50" r="2.5" />
-    </svg>
-    <span class="mark-index">FIG. 01 <span>—</span> OBSERVATION</span>
+    <img class="side-photo" src={withBase('/images/angelina-portrait.jpg')} alt="Portrait of Angelina Huang" />
+    <span class="mark-index">PORTRAIT</span>
   </a>
 
   <div class="side-identity">
     <span class="side-kicker">PERSONAL NOTEBOOK</span>
     <p class="side-title"><a href={home}>{SITE_TITLE}</a></p>
-    <p class="side-subtitle">Minds, machines &amp; markets</p>
+    <p class="side-subtitle">Mathematics and Computer Science @ NYU</p>
   </div>
 
   <nav class="side-nav" aria-label="Site">

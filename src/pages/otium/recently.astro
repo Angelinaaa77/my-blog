@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RecentlyList from '../../components/RecentlyList.astro';
 import { getRecent } from '../../lib/content';
+import { withBase } from '../../lib/site-path';
 
 const entries = await getRecent();
 ---
@@ -17,7 +18,7 @@ const entries = await getRecent();
 
     <p class="page-lede">
       Short notes, newest first. The most recent ten also appear on{' '}
-      <a href="/otium">Otium</a>.
+      <a href={withBase('/otium/')}>Otium</a>.
     </p>
 
     <RecentlyList entries={entries} />

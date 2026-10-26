@@ -16,7 +16,7 @@ export const EMAIL = 'angelinahuang1112@gmail.com';
  * Nav order. Each id must match a file in src/content/pages/; a page that is a
  * draft in the current build drops out of the nav automatically.
  */
-export const NAV_ORDER = ['existence', 'philosophy', 'otium'] as const;
+export const NAV_ORDER = ['existence', 'projects', 'philosophy', 'otium'] as const;
 
 /** How many log entries appear on /otium before the rest move to /otium/recently. */
 export const RECENT_ON_OTIUM = 10;
@@ -30,5 +30,6 @@ export const RECENT_ON_OTIUM = 10;
 export const SOCIAL = [
   { icon: 'github', label: 'GitHub', href: 'https://github.com/PeacoFoxy' },
   { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/angelina-huang1112/' },
+  { icon: 'discord', label: 'Discord', href: 'https://discord.com/users/1415166593893404684' },
   { icon: 'email', label: 'Email', href: `mailto:${EMAIL}` },
 ] as const;

@@ -4,6 +4,7 @@ import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import DraftNotice from '../../components/DraftNotice.astro';
+import SevenHobbies from '../../components/SevenHobbies.astro';
 import { sectionPaths, type Page } from '../../lib/content';
 
 // Renders /otium. The sibling recently.astro is a static route, so it keeps
@@ -20,6 +21,7 @@ const { title, updated, draft, description } = page.data;
 
   <article>
     <PageHeader title={title} updated={updated} draft={draft} />
+    <SevenHobbies />
     <div class="prose">
       <Content />
     </div>

@@ -1,0 +1,116 @@
+---
+interface Props {
+  hobby: {
+    rank: string;
+    suit: string;
+    suitName: string;
+    name: string;
+    glyph?: string;
+    icon?: 'piano-keyboard' | 'cocktail-lemon';
+    detail: string;
+  };
+}
+
+const { hobby } = Astro.props;
+---
+
+<button
+  class="hobby-card"
+  type="button"
+  data-hobby-card
+  data-hobby={hobby.name}
+  data-hobby-detail={hobby.detail}
+  data-rank={hobby.rank}
+  data-suit-name={hobby.suitName}
+  aria-pressed="false"
+  aria-label={`Flip ${hobby.rank} of ${hobby.suitName} to reveal ${hobby.name}`}
+>
+  <span class="hobby-card-inner">
+    <span class="hobby-card-face playing-card-face" aria-hidden="false">
+      <span class="playing-card-corner"><b>{hobby.rank}</b><i>{hobby.suit}</i></span>
+      <span class="playing-card-suit" aria-hidden="true">{hobby.suit}</span>
+      <span class="playing-card-corner playing-card-corner-bottom" aria-hidden="true"><b>{hobby.rank}</b><i>{hobby.suit}</i></span>
+    </span>
+    <span class="hobby-card-face hobby-card-front" aria-hidden="true">
+      <span class="hobby-glyph" aria-hidden="true">
+        {hobby.icon === 'piano-keyboard' && (
+          <svg viewBox="0 0 40 27" focusable="false">
+            <rect x="2.5" y="4" width="35" height="19" rx="1.5" />
+            <path d="M7.5 4v19M12.5 4v19M17.5 4v19M22.5 4v19M27.5 4v19M32.5 4v19" />
+            <path class="glyph-fill" d="M6.1 4h2.8v10H6.1zM11.1 4h2.8v10h-2.8zM21.1 4h2.8v10h-2.8zM26.1 4h2.8v10h-2.8zM31.1 4h2.8v10h-2.8z" />
+          </svg>
+        )}
+        {hobby.icon === 'cocktail-lemon' && (
+          <svg viewBox="0 0 40 40" focusable="false">
+            <path d="M4 9h25L16.5 22 4 9zM16.5 22v10M10.5 34h12M27 7l-6-5" />
+            <path class="glyph-lemon-rind" d="M25 8Q31 1.8 37 8q-6 6.2-12 0Z" />
+            <path d="M27.1 8Q31 4 34.9 8q-3.9 4-7.8 0ZM31 3.8v8.4M27.2 5.8l7.6 4.4M27.2 10.2l7.6-4.4" />
+          </svg>
+        )}
+        {hobby.glyph && <span class="hobby-glyph-char">{hobby.glyph}</span>}
+      </span>
+      <span class="hobby-card-title">{hobby.name}</span>
+      {hobby.detail && <span class="hobby-card-detail">{hobby.detail}</span>}
+      <span class="hobby-front-rule"></span>
+    </span>
+  </span>
+</button>
+
+<script>
+  const dropPokerChips = (card) => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const table = card.closest('.hobby-seven');
+    if (!table) return;
+
+    let rain = table.querySelector('.poker-chip-rain');
+    if (!rain) {
+      rain = document.createElement('div');
+      rain.className = 'poker-chip-rain';
+      rain.setAttribute('aria-hidden', 'true');
+      table.append(rain);
+    }
+
+    const tableRect = table.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    const startX = cardRect.left + cardRect.width / 2 - tableRect.left - table.clientLeft;
+    const startY = cardRect.top + cardRect.height * 0.14 - tableRect.top - table.clientTop;
+    const fallDistance = Math.max(48, table.clientHeight - startY - 22);
+    const count = Math.floor(Math.random() * 5) + 1;
+    const denominations = [1, 5, 10, 25, 100];
+    const spread = Math.min(14, cardRect.width / (count + 3));
+
+    Array.from({ length: count }, (_, index) => index).forEach((index) => {
+      const denomination = denominations[Math.floor(Math.random() * denominations.length)];
+      const offset = (index - (count - 1) / 2) * spread + (Math.random() - 0.5) * 6;
+      const chip = document.createElement('span');
+      chip.className = 'poker-chip';
+      chip.textContent = String(denomination);
+      chip.style.left = `${startX + offset}px`;
+      chip.style.top = `${startY}px`;
+      chip.style.setProperty('--chip-fall', `${fallDistance}px`);
+      chip.style.setProperty('--chip-size', denomination === 100 ? '1.55rem' : denomination >= 10 ? '1.4rem' : '1.25rem');
+      chip.style.setProperty('--chip-delay', `${index * 55 + Math.random() * 100}ms`);
+      rain.append(chip);
+      chip.addEventListener('animationend', () => chip.remove(), { once: true });
+    });
+  };
+
+  document.querySelectorAll('[data-hobby-card]').forEach((card) => {
+    const back = card.querySelector('.playing-card-face');
+    const front = card.querySelector('.hobby-card-front');
+
+    card.addEventListener('click', () => {
+      const flipped = card.getAttribute('aria-pressed') !== 'true';
+      if (flipped) dropPokerChips(card);
+      card.setAttribute('aria-pressed', String(flipped));
+      const detail = card.dataset.hobbyDetail;
+      card.setAttribute('aria-label', flipped
+        ? `${card.dataset.hobby}${detail ? `. ${detail}` : ''}. Turn card back`
+        : `Flip ${card.dataset.rank} of ${card.dataset.suitName} to reveal ${card.dataset.hobby}`);
+      card.classList.toggle('is-flipped', flipped);
+      back.setAttribute('aria-hidden', String(flipped));
+      front.setAttribute('aria-hidden', String(!flipped));
+    });
+  });
+</script>

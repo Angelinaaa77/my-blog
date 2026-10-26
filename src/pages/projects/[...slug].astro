@@ -1,0 +1,25 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import DraftNotice from '../../components/DraftNotice.astro';
+import { sectionPaths, type Page } from '../../lib/content';
+
+export const getStaticPaths = (async () => sectionPaths('projects')) satisfies GetStaticPaths;
+
+const { page } = Astro.props as { page: Page };
+const { Content } = await render(page);
+const { title, updated, draft, description } = page.data;
+---
+
+<BaseLayout title={title} description={description}>
+  {draft && <DraftNotice />}
+
+  <article>
+    <PageHeader title={title} updated={updated} draft={draft} />
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

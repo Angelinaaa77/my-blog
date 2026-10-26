@@ -4,13 +4,9 @@ description: 'Working positions on metaphysics, epistemology, ethics and aesthet
 updated: 2026-09-03
 ---
 
-Platonism mistakes the model for the world.
-
 ## Metaphysics
 
-The Big Five is the only test I think is the most accurate.
-
-My Big Five results, from a Mensorium test in October 2026. The label it gave me: Organizer, high conscientiousness.
+My Big Five results, October 26th: Organizer, high consciousness.
 
 <div class="traits">
   <div class="trait">
@@ -35,24 +31,22 @@ My Big Five results, from a Mensorium test in October 2026. The label it gave me
   </div>
 </div>
 
-High openness and high conscientiousness is the whole story: appetite for the new, discipline to finish. Each virtue has its overshoot: openness into dilettantism, conscientiousness into perfectionism.
-
-Why not MBTI? I have never quite believed in MBTI. It's hard to say mine because I'm pretty flexible between E and I, S and N, P and J. The only valid one that has never changed is T, which stands for logic and reasonable. But as a previously psychology fan in high school, I used it as a way to start a topic in social occasions.
+MBTI is not quite accurate for me.
 
 ## Epistemology
 
 A skeptical empiricist.
 
-I'm an enigmaphile.
+An enigmaphile.
 
 My strategy for living follows from this: seek gains by collecting positive accidents, maximizing exposure to good black swans.
 
 <div class="page-links">
-  <a href="/philosophy/library">
+  <a href="./library/">
     <span class="page-links-title">Library</span>
     <span class="page-links-desc">Books that did structural work on me: the ones after which something I had treated as obvious turned out to be a choice.</span>
   </a>
-  <a href="/philosophy/antilibrary">
+  <a href="./antilibrary/">
     <span class="page-links-title">Antilibrary</span>
     <span class="page-links-desc">Books I have not read, kept as a map of what I do not know, to eliminate epistemic arrogance.</span>
   </a>
@@ -72,120 +66,120 @@ Quackery, magician, and priest. You cannot tell.
       <div class="film-track">
         <div class="film-set">
     <figure class="painting">
-      <a href="/images/art/sketch-01.webp"><img src="/images/art/sketch-01.webp" alt="Winged figure in flowing robes, standing" loading="lazy" /></a>
+      <a href="../images/art/sketch-01.webp"><img src="../images/art/sketch-01.webp" alt="Winged figure in flowing robes, standing" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-02.webp"><img src="/images/art/sketch-02.webp" alt="Bust of a woman on a plinth" loading="lazy" /></a>
+      <a href="../images/art/sketch-02.webp"><img src="../images/art/sketch-02.webp" alt="Bust of a woman on a plinth" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-03.webp"><img src="/images/art/sketch-03.webp" alt="Crowned figure holding a sword upright" loading="lazy" /></a>
+      <a href="../images/art/sketch-03.webp"><img src="../images/art/sketch-03.webp" alt="Crowned figure holding a sword upright" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-04.webp"><img src="/images/art/sketch-04.webp" alt="Winged figure seen from behind, wings raised" loading="lazy" /></a>
+      <a href="../images/art/sketch-04.webp"><img src="../images/art/sketch-04.webp" alt="Winged figure seen from behind, wings raised" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-05.webp"><img src="/images/art/sketch-05.webp" alt="Figure drawing a longbow" loading="lazy" /></a>
+      <a href="../images/art/sketch-05.webp"><img src="../images/art/sketch-05.webp" alt="Figure drawing a longbow" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-06.webp"><img src="/images/art/sketch-06.webp" alt="Winged figure with her wings curved around her" loading="lazy" /></a>
+      <a href="../images/art/sketch-06.webp"><img src="../images/art/sketch-06.webp" alt="Winged figure with her wings curved around her" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-07.webp"><img src="/images/art/sketch-07.webp" alt="Figure playing a long flute, seen from behind" loading="lazy" /></a>
+      <a href="../images/art/sketch-07.webp"><img src="../images/art/sketch-07.webp" alt="Figure playing a long flute, seen from behind" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-08.webp"><img src="/images/art/sketch-08.webp" alt="Seated winged figure wearing a crown of roses" loading="lazy" /></a>
+      <a href="../images/art/sketch-08.webp"><img src="../images/art/sketch-08.webp" alt="Seated winged figure wearing a crown of roses" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-09.webp"><img src="/images/art/sketch-09.webp" alt="Mourning winged statue, head bowed into her hand" loading="lazy" /></a>
+      <a href="../images/art/sketch-09.webp"><img src="../images/art/sketch-09.webp" alt="Mourning winged statue, head bowed into her hand" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-10.webp"><img src="/images/art/sketch-10.webp" alt="Winged figure with hands crossed over her chest" loading="lazy" /></a>
+      <a href="../images/art/sketch-10.webp"><img src="../images/art/sketch-10.webp" alt="Winged figure with hands crossed over her chest" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-11.webp"><img src="/images/art/sketch-11.webp" alt="Winged figure resting her chin on a sword held upright" loading="lazy" /></a>
+      <a href="../images/art/sketch-11.webp"><img src="../images/art/sketch-11.webp" alt="Winged figure resting her chin on a sword held upright" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-12.webp"><img src="/images/art/sketch-12.webp" alt="Winged figure in profile with long wavy hair" loading="lazy" /></a>
+      <a href="../images/art/sketch-12.webp"><img src="../images/art/sketch-12.webp" alt="Winged figure in profile with long wavy hair" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-13.webp"><img src="/images/art/sketch-13.webp" alt="Winged figure dancing in billowing drapery" loading="lazy" /></a>
+      <a href="../images/art/sketch-13.webp"><img src="../images/art/sketch-13.webp" alt="Winged figure dancing in billowing drapery" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-14.webp"><img src="/images/art/sketch-14.webp" alt="Winged figure looking upward, hair streaming" loading="lazy" /></a>
+      <a href="../images/art/sketch-14.webp"><img src="../images/art/sketch-14.webp" alt="Winged figure looking upward, hair streaming" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-15.webp"><img src="/images/art/sketch-15.webp" alt="Winged figure with arms folded, head bowed" loading="lazy" /></a>
+      <a href="../images/art/sketch-15.webp"><img src="../images/art/sketch-15.webp" alt="Winged figure with arms folded, head bowed" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-16.webp"><img src="/images/art/sketch-16.webp" alt="Kneeling winged figure with one great wing raised" loading="lazy" /></a>
+      <a href="../images/art/sketch-16.webp"><img src="../images/art/sketch-16.webp" alt="Kneeling winged figure with one great wing raised" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-17.webp"><img src="/images/art/sketch-17.webp" alt="Bust of a woman with flowing hair" loading="lazy" /></a>
+      <a href="../images/art/sketch-17.webp"><img src="../images/art/sketch-17.webp" alt="Bust of a woman with flowing hair" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-18.webp"><img src="/images/art/sketch-18.webp" alt="Medusa with snakes for hair and red lips" loading="lazy" /></a>
+      <a href="../images/art/sketch-18.webp"><img src="../images/art/sketch-18.webp" alt="Medusa with snakes for hair and red lips" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-19.webp"><img src="/images/art/sketch-19.webp" alt="Kneeling winged figure with hands clasped in prayer" loading="lazy" /></a>
+      <a href="../images/art/sketch-19.webp"><img src="../images/art/sketch-19.webp" alt="Kneeling winged figure with hands clasped in prayer" loading="lazy" /></a>
     </figure>
         </div>
         <div class="film-set" aria-hidden="true">
     <figure class="painting">
-      <a href="/images/art/sketch-01.webp" tabindex="-1"><img src="/images/art/sketch-01.webp" alt="Winged figure in flowing robes, standing" loading="lazy" /></a>
+      <a href="../images/art/sketch-01.webp" tabindex="-1"><img src="../images/art/sketch-01.webp" alt="Winged figure in flowing robes, standing" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-02.webp" tabindex="-1"><img src="/images/art/sketch-02.webp" alt="Bust of a woman on a plinth" loading="lazy" /></a>
+      <a href="../images/art/sketch-02.webp" tabindex="-1"><img src="../images/art/sketch-02.webp" alt="Bust of a woman on a plinth" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-03.webp" tabindex="-1"><img src="/images/art/sketch-03.webp" alt="Crowned figure holding a sword upright" loading="lazy" /></a>
+      <a href="../images/art/sketch-03.webp" tabindex="-1"><img src="../images/art/sketch-03.webp" alt="Crowned figure holding a sword upright" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-04.webp" tabindex="-1"><img src="/images/art/sketch-04.webp" alt="Winged figure seen from behind, wings raised" loading="lazy" /></a>
+      <a href="../images/art/sketch-04.webp" tabindex="-1"><img src="../images/art/sketch-04.webp" alt="Winged figure seen from behind, wings raised" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-05.webp" tabindex="-1"><img src="/images/art/sketch-05.webp" alt="Figure drawing a longbow" loading="lazy" /></a>
+      <a href="../images/art/sketch-05.webp" tabindex="-1"><img src="../images/art/sketch-05.webp" alt="Figure drawing a longbow" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-06.webp" tabindex="-1"><img src="/images/art/sketch-06.webp" alt="Winged figure with her wings curved around her" loading="lazy" /></a>
+      <a href="../images/art/sketch-06.webp" tabindex="-1"><img src="../images/art/sketch-06.webp" alt="Winged figure with her wings curved around her" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-07.webp" tabindex="-1"><img src="/images/art/sketch-07.webp" alt="Figure playing a long flute, seen from behind" loading="lazy" /></a>
+      <a href="../images/art/sketch-07.webp" tabindex="-1"><img src="../images/art/sketch-07.webp" alt="Figure playing a long flute, seen from behind" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-08.webp" tabindex="-1"><img src="/images/art/sketch-08.webp" alt="Seated winged figure wearing a crown of roses" loading="lazy" /></a>
+      <a href="../images/art/sketch-08.webp" tabindex="-1"><img src="../images/art/sketch-08.webp" alt="Seated winged figure wearing a crown of roses" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-09.webp" tabindex="-1"><img src="/images/art/sketch-09.webp" alt="Mourning winged statue, head bowed into her hand" loading="lazy" /></a>
+      <a href="../images/art/sketch-09.webp" tabindex="-1"><img src="../images/art/sketch-09.webp" alt="Mourning winged statue, head bowed into her hand" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-10.webp" tabindex="-1"><img src="/images/art/sketch-10.webp" alt="Winged figure with hands crossed over her chest" loading="lazy" /></a>
+      <a href="../images/art/sketch-10.webp" tabindex="-1"><img src="../images/art/sketch-10.webp" alt="Winged figure with hands crossed over her chest" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-11.webp" tabindex="-1"><img src="/images/art/sketch-11.webp" alt="Winged figure resting her chin on a sword held upright" loading="lazy" /></a>
+      <a href="../images/art/sketch-11.webp" tabindex="-1"><img src="../images/art/sketch-11.webp" alt="Winged figure resting her chin on a sword held upright" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-12.webp" tabindex="-1"><img src="/images/art/sketch-12.webp" alt="Winged figure in profile with long wavy hair" loading="lazy" /></a>
+      <a href="../images/art/sketch-12.webp" tabindex="-1"><img src="../images/art/sketch-12.webp" alt="Winged figure in profile with long wavy hair" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-13.webp" tabindex="-1"><img src="/images/art/sketch-13.webp" alt="Winged figure dancing in billowing drapery" loading="lazy" /></a>
+      <a href="../images/art/sketch-13.webp" tabindex="-1"><img src="../images/art/sketch-13.webp" alt="Winged figure dancing in billowing drapery" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-14.webp" tabindex="-1"><img src="/images/art/sketch-14.webp" alt="Winged figure looking upward, hair streaming" loading="lazy" /></a>
+      <a href="../images/art/sketch-14.webp" tabindex="-1"><img src="../images/art/sketch-14.webp" alt="Winged figure looking upward, hair streaming" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-15.webp" tabindex="-1"><img src="/images/art/sketch-15.webp" alt="Winged figure with arms folded, head bowed" loading="lazy" /></a>
+      <a href="../images/art/sketch-15.webp" tabindex="-1"><img src="../images/art/sketch-15.webp" alt="Winged figure with arms folded, head bowed" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-16.webp" tabindex="-1"><img src="/images/art/sketch-16.webp" alt="Kneeling winged figure with one great wing raised" loading="lazy" /></a>
+      <a href="../images/art/sketch-16.webp" tabindex="-1"><img src="../images/art/sketch-16.webp" alt="Kneeling winged figure with one great wing raised" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-17.webp" tabindex="-1"><img src="/images/art/sketch-17.webp" alt="Bust of a woman with flowing hair" loading="lazy" /></a>
+      <a href="../images/art/sketch-17.webp" tabindex="-1"><img src="../images/art/sketch-17.webp" alt="Bust of a woman with flowing hair" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-18.webp" tabindex="-1"><img src="/images/art/sketch-18.webp" alt="Medusa with snakes for hair and red lips" loading="lazy" /></a>
+      <a href="../images/art/sketch-18.webp" tabindex="-1"><img src="../images/art/sketch-18.webp" alt="Medusa with snakes for hair and red lips" loading="lazy" /></a>
     </figure>
     <figure class="painting">
-      <a href="/images/art/sketch-19.webp" tabindex="-1"><img src="/images/art/sketch-19.webp" alt="Kneeling winged figure with hands clasped in prayer" loading="lazy" /></a>
+      <a href="../images/art/sketch-19.webp" tabindex="-1"><img src="../images/art/sketch-19.webp" alt="Kneeling winged figure with hands clasped in prayer" loading="lazy" /></a>
     </figure>
         </div>
       </div>
@@ -265,13 +259,13 @@ Quackery, magician, and priest. You cannot tell.
     <h4 class="sense-sub">Sweet</h4>
     <ul class="sense-links">
       <li>
-        <span class="sense-link-title">Pistachio crepe cake</span> <span class="sense-link-note">Lady M</span>
+        <span class="sense-link-title">Pistachio crepe cake</span><br /><span class="sense-link-note">Lady M</span>
       </li>
       <li>
-        <span class="sense-link-title">Amarena cherry and hazelnut</span> <span class="sense-link-note">Gelato</span>
+        <span class="sense-link-title">Amarena cherry and hazelnut</span><br /><span class="sense-link-note">Gelato</span>
       </li>
       <li>
-        <span class="sense-link-title">Chocolate chip cookies</span> <span class="sense-link-note">Chip City</span>
+        <span class="sense-link-title">Chocolate chip cookies</span><br /><span class="sense-link-note">Chip City</span>
       </li>
     </ul>
     <h4 class="sense-sub">Alcohol</h4>
@@ -284,30 +278,6 @@ Quackery, magician, and priest. You cannot tell.
       </li>
       <li>
         <span class="sense-link-title">Apple martini</span> <span class="sense-link-note">(shaken, not stirred)</span>
-      </li>
-    </ul>
-  </section>
-  <section class="sense">
-    <h3>Touch</h3>
-    <h4 class="sense-sub">Books</h4>
-    <ul class="sense-links">
-      <li>
-        <span class="sense-link-title">Book pages</span>
-        <span class="sense-link-desc">New paper smooth, old paper brittle and dry. Half of reading is holding the thing itself.</span>
-      </li>
-    </ul>
-    <h4 class="sense-sub">Piano</h4>
-    <ul class="sense-links">
-      <li>
-        <span class="sense-link-title">Piano keys</span>
-        <span class="sense-link-desc">Weighted and cool to the touch. An hour in, my fingers stop thinking and simply play.</span>
-      </li>
-    </ul>
-    <h4 class="sense-sub">Poker</h4>
-    <ul class="sense-links">
-      <li>
-        <span class="sense-link-title">Chips</span>
-        <span class="sense-link-desc">Clay chips, riffled without looking. They keep my hands busy while my mind counts.</span>
       </li>
     </ul>
   </section>

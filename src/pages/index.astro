@@ -1,0 +1,21 @@
+---
+import { SITE_TITLE } from '../config';
+import { withBase } from '../lib/site-path';
+
+const destination = withBase('/existence/');
+const canonical = new URL(destination, Astro.site ?? Astro.url).href;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <link rel="canonical" href={canonical} />
+    <title>{SITE_TITLE}</title>
+  </head>
+  <body>
+    <p><a href={destination}>Open {SITE_TITLE}'s personal notebook</a></p>
+  </body>
+</html>

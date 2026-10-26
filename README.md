@@ -17,6 +17,7 @@ Every page shows when it was last updated; there is no chronological feed.
 | ------------------ | --------------------------------- |
 | `/` → `/existence` | redirect, set in `astro.config.mjs` |
 | `/existence`       | `src/content/pages/existence.md`  |
+| `/projects`        | `src/content/pages/projects.md`   |
 | `/philosophy`      | `src/content/pages/philosophy.md` |
 | `/philosophy/library`     | `src/content/pages/philosophy/library.md` + `src/data/books.json` |
 | `/philosophy/antilibrary` | `src/content/pages/philosophy/antilibrary.md` + `src/data/books.json` |
@@ -43,7 +44,7 @@ Two optional fields, currently only used by `/existence`:
 
 ```yaml
 banner: '/images/banner.jpg' # full-bleed image, served from public/
-bannerAlt: 'Description'
+bannerAlt: 'Description for screen readers'
 questions: # rendered as the page heading
   - 'Who am I?'
 ```
@@ -111,14 +112,28 @@ The mechanism is `getStaticPaths` returning an empty array — see
 `sectionPaths()` in `src/lib/content.ts`. A plain `index.astro` cannot opt out
 of being written, which is why each section is a rest route.
 
+## Publishing and updates
+
+The site is configured for GitHub Pages at
+`https://angelinaaa77.github.io/my-blog/`. The `Deploy to GitHub Pages` action
+builds and publishes the site whenever changes are pushed to `main`. After the
+first push, choose **GitHub Actions** under **Settings → Pages → Build and
+deployment → Source** if GitHub has not enabled Pages automatically.
+
+Future edits can be made in these source files and pushed to `main`; the same
+action will publish the updated site. Page content is in `src/content/pages/`,
+the design system is in `src/styles/global.css`, and site identity and links
+are in `src/config.ts`.
+
+The site and sitemap origin are configured in `astro.config.mjs`; the repo
+path is added automatically for the Pages build.
+
 ## Before deploying
 
-- `astro.config.mjs` — set `site` to your real domain. RSS and the sitemap need
-  it for absolute URLs.
-- `public/robots.txt` — same domain.
+- `public/robots.txt` — sitemap URL for GitHub Pages.
 - `src/config.ts` — site title, your name, email, social links, nav order, and
   how many log entries show on `/otium`. Everything you are likely to edit.
-- `public/images/banner.jpg` — replace the placeholder. Roughly 2.7:1; it is
+- `public/images/banner.jpg` — current monochrome masthead image. Roughly 2.7:1; it is
   centre-cropped on narrow viewports, so keep the subject near the middle.
 
 ## Footer

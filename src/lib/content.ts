@@ -1,4 +1,5 @@
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
+import { withBase } from './site-path';
 
 export type Page = CollectionEntry<'pages'>;
 export type RecentEntry = CollectionEntry<'recently'>;
@@ -92,7 +93,7 @@ export async function getNavItems(order: readonly string[]) {
   return order.flatMap((id) => {
     const page = available.get(id);
     return page
-      ? [{ href: `/${id}`, label: page.data.title, draft: page.data.draft }]
+      ? [{ href: withBase(`/${id}/`), label: page.data.title, draft: page.data.draft }]
       : [];
   });
 }

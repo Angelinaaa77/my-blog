@@ -1,15 +1,29 @@
 ---
-// The button label is filled in by the inline script once the resolved theme
-// is known, so it never renders a value that contradicts the page.
+// The switch state is filled in from the resolved theme before interaction.
 ---
 <button
   id="theme-toggle"
   class="theme-toggle"
   type="button"
-  aria-label="Switch colour theme"
-  title="Switch colour theme"
+  role="switch"
+  aria-label="Dark mode"
+  aria-checked="false"
+  title="Switch to dark mode"
 >
-  <span aria-hidden="true">&#9789;</span>
+  <span class="theme-toggle-track" aria-hidden="true">
+    <span class="theme-toggle-thumb"></span>
+    <span class="theme-toggle-icon theme-toggle-sun">
+      <svg viewBox="0 0 24 24" focusable="false">
+        <circle cx="12" cy="12" r="3.5" />
+        <path d="M12 2.5v3m0 13v3M2.5 12h3m13 0h3M5.3 5.3l2.1 2.1m9.2 9.2 2.1 2.1m0-13.4-2.1 2.1m-9.2 9.2-2.1 2.1" />
+      </svg>
+    </span>
+    <span class="theme-toggle-icon theme-toggle-moon">
+      <svg viewBox="0 0 24 24" focusable="false">
+        <path d="M20.2 15.4A8.8 8.8 0 0 1 8.6 3.8 8.9 8.9 0 1 0 20.2 15.4Z" />
+      </svg>
+    </span>
+  </span>
 </button>
 
 <script is:inline>
@@ -17,17 +31,26 @@
     const toggle = document.getElementById('theme-toggle');
     if (!toggle) return;
 
-    const label = toggle.firstElementChild;
     const paint = (theme) => {
-      if (label) label.textContent = theme === 'dark' ? '☼' : '☽';
-      toggle.setAttribute(
-        'aria-label',
-        theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme',
-      );
-      toggle.setAttribute('title', toggle.getAttribute('aria-label'));
+      const isDark = theme === 'dark';
+      toggle.setAttribute('aria-checked', String(isDark));
+      toggle.setAttribute('aria-label', 'Dark mode');
+      toggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
     };
 
     paint(document.documentElement.dataset.theme || 'light');
+
+    const systemPreference = matchMedia('(prefers-color-scheme: dark)');
+    systemPreference.addEventListener('change', (event) => {
+      let stored = null;
+      try {
+        stored = localStorage.getItem('theme');
+      } catch {}
+      if (stored) return;
+      const theme = event.matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = theme;
+      paint(theme);
+    });
 
     toggle.addEventListener('click', () => {
       const next =
